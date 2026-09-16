@@ -1,0 +1,16 @@
+preview*.log
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+_site/
+assets/video/火2_HSBSLR.mp4
+node_modules/
+__pycache__/
+*.pyc
+
+# Source assessment reports are local reference material. Some individual PDFs
+# exceed GitHub's 100 MB limit and are not required by the static website.
+推荐算法+评分/评估报告数据/

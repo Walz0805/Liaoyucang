@@ -1,0 +1,10 @@
+星璇律动数字人运行时素材（v3）
+
+小星：assets/avatar/xiaoxing-demo-exact-states-v3.png
+小璇：assets/avatar/xiaoxuan-demo-exact-states-v3.png
+
+Atlas 均为 2×2：
+左上 idle / 右上 blink / 左下 speaking / 右下 blink+speaking
+
+avatar-canvas.js 只按整帧区域切换，不再做 mouth patch / face patch。
+app.js?v=20260916-1 明确引用以上两个 atlas 文件。

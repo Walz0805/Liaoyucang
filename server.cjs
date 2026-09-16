@@ -1,0 +1,4 @@
+const http=require('node:http'),fs=require('node:fs'),path=require('node:path');
+const root=__dirname;
+http.createServer((req,res)=>{let p;try{p=path.resolve(root,'.'+decodeURIComponent(req.url.split('?')[0]==='/'?'/index.html':req.url.split('?')[0]));}catch{res.writeHead(400);res.end();return}if(!p.startsWith(root+path.sep)){res.writeHead(403);res.end();return}fs.readFile(p,(err,data)=>{if(err){res.writeHead(404);res.end('Not found');return}res.setHeader('Cache-Control','no-store');res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.wav':'audio/wav','.mp3':'audio/mpeg','.ogg':'audio/ogg','.mp4':'video/mp4'})[path.extname(p)]||'application/octet-stream');res.end(data)})}).listen(5173,'127.0.0.1',()=>console.log('星璇律动 http://127.0.0.1:5173'));
+

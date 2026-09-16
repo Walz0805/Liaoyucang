@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+const classes=new Set();let scheduled,delay;
+globalThis.document={querySelector:()=>({classList:{toggle:(c,v)=>v?classes.add(c):classes.delete(c),remove:(...names)=>names.forEach(n=>classes.delete(n))}})};
+globalThis.setTimeout=(fn,ms)=>(scheduled=fn,delay=ms,1);globalThis.clearTimeout=()=>{};
+const {followVoice,stopMouth}=await import('./lipsync.js');
+const p={src:'test.wav',currentTime:0,paused:false,ended:false};
+followVoice(p);assert(classes.has('mouth-open'));assert(delay>=130&&delay<=170);
+scheduled();assert(!classes.has('mouth-open'));assert(delay>=90&&delay<=130);
+scheduled();assert(classes.has('mouth-open'));
+p.paused=true;scheduled();assert.equal(classes.size,0);
+stopMouth();assert.equal(classes.size,0);
+console.log('PASS: speaking alternates open/closed; pause/stop leaves mouth closed');

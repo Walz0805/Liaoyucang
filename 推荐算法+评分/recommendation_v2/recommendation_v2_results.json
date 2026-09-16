@@ -1,0 +1,813 @@
+{
+  "version": "recommendation_v2",
+  "scores_file": "scoring_v2\\scoring_v2_results_befor.json",
+  "videos_file": "recommendation_v2\\video_tags_natural_scenery_v2.json",
+  "stage": "before",
+  "video_count": 12,
+  "results": [
+    {
+      "before_sample_id": "U001",
+      "after_sample_id": null,
+      "risk_level": "normal",
+      "user_profile": {
+        "risk": {
+          "level": "normal",
+          "phq9": 9.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "normal",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.03061999999999998,
+        "dim3_arousal_limit": 0.85,
+        "dim4_safety_need": 0.5,
+        "dim5_visual_rhythm_limit": 0.85,
+        "dim6_function_need": 0.55,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "认知重构",
+      "recalled_function_mode": "正念",
+      "fallback_used": true,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "5_11",
+          "title": "城市建设航拍",
+          "function_tag": "正念",
+          "scene_category": "城市建设",
+          "score": 0.815124,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_27",
+          "title": "雪山景观切换",
+          "function_tag": "正念",
+          "scene_category": "雪山",
+          "score": 0.745874,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 2,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U002",
+      "after_sample_id": null,
+      "risk_level": "moderate",
+      "user_profile": {
+        "risk": {
+          "level": "moderate",
+          "phq9": 10.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "moderate",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.31125,
+        "dim3_arousal_limit": 0.65,
+        "dim4_safety_need": 0.5166666666666666,
+        "dim5_visual_rhythm_limit": 0.65,
+        "dim6_function_need": 0.55,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "认知重构",
+      "recalled_function_mode": "正念",
+      "fallback_used": true,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "5_11",
+          "title": "城市建设航拍",
+          "function_tag": "正念",
+          "scene_category": "城市建设",
+          "score": 0.872083,
+          "reasons": [
+            "放松诱导力匹配",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_27",
+          "title": "雪山景观切换",
+          "function_tag": "正念",
+          "scene_category": "雪山",
+          "score": 0.803333,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 2,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U003",
+      "after_sample_id": null,
+      "risk_level": "normal",
+      "user_profile": {
+        "risk": {
+          "level": "normal",
+          "phq9": 3.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "normal",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.0,
+        "dim3_arousal_limit": 0.85,
+        "dim4_safety_need": 0.39999999999999997,
+        "dim5_visual_rhythm_limit": 0.85,
+        "dim6_function_need": 0.55,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "认知重构",
+      "recalled_function_mode": "正念",
+      "fallback_used": true,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "5_11",
+          "title": "城市建设航拍",
+          "function_tag": "正念",
+          "scene_category": "城市建设",
+          "score": 0.804,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_27",
+          "title": "雪山景观切换",
+          "function_tag": "正念",
+          "scene_category": "雪山",
+          "score": 0.73175,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 2,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U004",
+      "after_sample_id": null,
+      "risk_level": "moderate",
+      "user_profile": {
+        "risk": {
+          "level": "moderate",
+          "phq9": 11.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "moderate",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.3305,
+        "dim3_arousal_limit": 0.65,
+        "dim4_safety_need": 0.5333333333333333,
+        "dim5_visual_rhythm_limit": 0.65,
+        "dim6_function_need": 0.55,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "认知重构",
+      "recalled_function_mode": "正念",
+      "fallback_used": true,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "5_11",
+          "title": "城市建设航拍",
+          "function_tag": "正念",
+          "scene_category": "城市建设",
+          "score": 0.876767,
+          "reasons": [
+            "放松诱导力匹配",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_27",
+          "title": "雪山景观切换",
+          "function_tag": "正念",
+          "scene_category": "雪山",
+          "score": 0.808517,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 2,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U005",
+      "after_sample_id": null,
+      "risk_level": "moderate",
+      "user_profile": {
+        "risk": {
+          "level": "moderate",
+          "phq9": 14.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "moderate",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.25,
+        "dim3_arousal_limit": 0.65,
+        "dim4_safety_need": 0.5833333333333333,
+        "dim5_visual_rhythm_limit": 0.65,
+        "dim6_function_need": 0.55,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "认知重构",
+      "recalled_function_mode": "正念",
+      "fallback_used": true,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "5_11",
+          "title": "城市建设航拍",
+          "function_tag": "正念",
+          "scene_category": "城市建设",
+          "score": 0.863167,
+          "reasons": [
+            "放松诱导力匹配",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_27",
+          "title": "雪山景观切换",
+          "function_tag": "正念",
+          "scene_category": "雪山",
+          "score": 0.796417,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 2,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U006",
+      "after_sample_id": null,
+      "risk_level": "normal",
+      "user_profile": {
+        "risk": {
+          "level": "normal",
+          "phq9": 4.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "normal",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.13124999999999998,
+        "dim3_arousal_limit": 0.85,
+        "dim4_safety_need": 0.41666666666666663,
+        "dim5_visual_rhythm_limit": 0.85,
+        "dim6_function_need": 0.55,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "认知重构",
+      "recalled_function_mode": "正念",
+      "fallback_used": true,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "5_11",
+          "title": "城市建设航拍",
+          "function_tag": "正念",
+          "scene_category": "城市建设",
+          "score": 0.831083,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_27",
+          "title": "雪山景观切换",
+          "function_tag": "正念",
+          "scene_category": "雪山",
+          "score": 0.759333,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 2,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U007",
+      "after_sample_id": null,
+      "risk_level": "high",
+      "user_profile": {
+        "risk": {
+          "level": "high",
+          "phq9": 17.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "high",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.37950000000000006,
+        "dim3_arousal_limit": 0.5,
+        "dim4_safety_need": 0.85,
+        "dim5_visual_rhythm_limit": 0.5,
+        "dim6_function_need": 0.2,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "安抚",
+      "recalled_function_mode": "安抚",
+      "fallback_used": false,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "6_5",
+          "title": "海岸湿地航拍",
+          "function_tag": "安抚",
+          "scene_category": "海岸湿地",
+          "score": 0.8394,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_10",
+          "title": "云下雪峰",
+          "function_tag": "安抚",
+          "scene_category": "雪山",
+          "score": 0.83315,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 3,
+          "video_id": "5_16",
+          "title": "晨光雪山",
+          "function_tag": "安抚",
+          "scene_category": "雪山日照",
+          "score": 0.82615,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 4,
+          "video_id": "2_29",
+          "title": "蓝天下的翠绿群山",
+          "function_tag": "安抚",
+          "scene_category": "绿色山景",
+          "score": 0.82415,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 5,
+          "video_id": "5_17",
+          "title": "山巅云海",
+          "function_tag": "安抚",
+          "scene_category": "云海山景",
+          "score": 0.822025,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 10,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U008",
+      "after_sample_id": null,
+      "risk_level": "high",
+      "user_profile": {
+        "risk": {
+          "level": "high",
+          "phq9": 18.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "high",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.35061999999999993,
+        "dim3_arousal_limit": 0.5,
+        "dim4_safety_need": 0.85,
+        "dim5_visual_rhythm_limit": 0.5,
+        "dim6_function_need": 0.2,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "安抚",
+      "recalled_function_mode": "安抚",
+      "fallback_used": false,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "6_5",
+          "title": "海岸湿地航拍",
+          "function_tag": "安抚",
+          "scene_category": "海岸湿地",
+          "score": 0.833624,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_10",
+          "title": "云下雪峰",
+          "function_tag": "安抚",
+          "scene_category": "雪山",
+          "score": 0.827374,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 3,
+          "video_id": "5_16",
+          "title": "晨光雪山",
+          "function_tag": "安抚",
+          "scene_category": "雪山日照",
+          "score": 0.820374,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 4,
+          "video_id": "2_29",
+          "title": "蓝天下的翠绿群山",
+          "function_tag": "安抚",
+          "scene_category": "绿色山景",
+          "score": 0.818374,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 5,
+          "video_id": "5_17",
+          "title": "山巅云海",
+          "function_tag": "安抚",
+          "scene_category": "云海山景",
+          "score": 0.816249,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 10,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U009",
+      "after_sample_id": null,
+      "risk_level": "moderate",
+      "user_profile": {
+        "risk": {
+          "level": "moderate",
+          "phq9": 14.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "moderate",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.25,
+        "dim3_arousal_limit": 0.65,
+        "dim4_safety_need": 0.5833333333333333,
+        "dim5_visual_rhythm_limit": 0.65,
+        "dim6_function_need": 0.55,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "认知重构",
+      "recalled_function_mode": "正念",
+      "fallback_used": true,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "5_11",
+          "title": "城市建设航拍",
+          "function_tag": "正念",
+          "scene_category": "城市建设",
+          "score": 0.863167,
+          "reasons": [
+            "放松诱导力匹配",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_27",
+          "title": "雪山景观切换",
+          "function_tag": "正念",
+          "scene_category": "雪山",
+          "score": 0.796417,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 2,
+        "expression_used": true
+      }
+    },
+    {
+      "before_sample_id": "U010",
+      "after_sample_id": null,
+      "risk_level": "high",
+      "user_profile": {
+        "risk": {
+          "level": "high",
+          "phq9": 16.0,
+          "gad7": 0.0,
+          "risk_flags": [
+            "hrv_unavailable"
+          ],
+          "risk_terms": []
+        },
+        "risk_level": "high",
+        "dim1_valence": 0.0,
+        "dim2_relaxation_need": 0.278,
+        "dim3_arousal_limit": 0.5,
+        "dim4_safety_need": 0.85,
+        "dim5_visual_rhythm_limit": 0.5,
+        "dim6_function_need": 0.2,
+        "source_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "expression_used": true
+      },
+      "target_function_mode": "安抚",
+      "recalled_function_mode": "安抚",
+      "fallback_used": false,
+      "recommendations": [
+        {
+          "rank": 1,
+          "video_id": "6_5",
+          "title": "海岸湿地航拍",
+          "function_tag": "安抚",
+          "scene_category": "海岸湿地",
+          "score": 0.8191,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 2,
+          "video_id": "2_10",
+          "title": "云下雪峰",
+          "function_tag": "安抚",
+          "scene_category": "雪山",
+          "score": 0.81285,
+          "reasons": [
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 3,
+          "video_id": "5_16",
+          "title": "晨光雪山",
+          "function_tag": "安抚",
+          "scene_category": "雪山日照",
+          "score": 0.80585,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 4,
+          "video_id": "2_29",
+          "title": "蓝天下的翠绿群山",
+          "function_tag": "安抚",
+          "scene_category": "绿色山景",
+          "score": 0.80385,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        },
+        {
+          "rank": 5,
+          "video_id": "5_17",
+          "title": "山巅云海",
+          "function_tag": "安抚",
+          "scene_category": "云海山景",
+          "score": 0.801725,
+          "reasons": [
+            "高安全感",
+            "唤醒度在当前上限内",
+            "视觉节奏适配"
+          ]
+        }
+      ],
+      "audit": {
+        "blocked_videos": {},
+        "history_filtered_count": 0,
+        "safe_candidate_count": 12,
+        "recalled_count": 10,
+        "expression_used": true
+      }
+    }
+  ]
+}

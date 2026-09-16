@@ -1,0 +1,31 @@
+name: Publish StarPulse demo
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble static site
+        run: |
+          mkdir -p _site/assets/avatar _site/assets/images _site/assets/voice
+          cp index.html *.css app.js assessment.js assessment-service.js experience.js report-panels.js narration.js lipsync.js .nojekyll _site/
+          cp assets/avatar/xingxuan-readable.png assets/avatar/foreground-mask.png assets/avatar/speaking.png _site/assets/avatar/
+          cp assets/images/*.png assets/images/logo.jpg _site/assets/images/
+          cp assets/voice/*.wav assets/voice/envelopes.json _site/assets/voice/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

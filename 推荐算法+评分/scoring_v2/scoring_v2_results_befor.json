@@ -1,0 +1,1359 @@
+{
+  "version": "score_v2",
+  "stage": "befor",
+  "input_file": "scoring_v2\\psych_assessment_before_samples_10.json",
+  "config": {
+    "state_weights": {
+      "stai_s": 0.3,
+      "mood": 0.25,
+      "physiology": 0.35,
+      "hrv": 0.1
+    },
+    "physiology_weights": {
+      "heart_rate": 0.35,
+      "respiration": 0.35,
+      "eda": 0.3
+    },
+    "physiology_channels": {
+      "heart_rate": {
+        "labels": [
+          "心率"
+        ],
+        "date_types": [
+          1
+        ],
+        "valid_range": [
+          30,
+          220
+        ],
+        "target": [
+          60,
+          80
+        ],
+        "tolerance": [
+          10,
+          20
+        ]
+      },
+      "respiration": {
+        "labels": [
+          "呼吸"
+        ],
+        "date_types": [
+          2
+        ],
+        "valid_range": [
+          4,
+          60
+        ],
+        "target": [
+          10,
+          18
+        ],
+        "tolerance": [
+          4,
+          8
+        ]
+      },
+      "eda": {
+        "labels": [
+          "皮电",
+          "EDA",
+          "GSR"
+        ],
+        "date_types": [
+          31
+        ],
+        "valid_range": [
+          0,
+          100
+        ],
+        "target": [
+          1,
+          10
+        ],
+        "tolerance": [
+          1,
+          15
+        ]
+      },
+      "temperature": {
+        "labels": [
+          "体温"
+        ],
+        "date_types": [
+          3
+        ],
+        "valid_range": [
+          30,
+          43
+        ]
+      },
+      "spo2": {
+        "labels": [
+          "血氧",
+          "SpO2"
+        ],
+        "date_types": [
+          41
+        ],
+        "valid_range": [
+          70,
+          100
+        ]
+      },
+      "ibi": {
+        "labels": [
+          "IBI",
+          "RR",
+          "RR间期",
+          "心搏间期"
+        ],
+        "date_types": [
+          6,
+          7
+        ],
+        "valid_range": [
+          300,
+          2000
+        ]
+      }
+    },
+    "quality": {
+      "min_valid_ratio": 0.8,
+      "min_duration_sec": 30,
+      "flat_repeat_ratio": 0.9,
+      "min_hrv_intervals": 30
+    },
+    "hrv_lnrmssd_reference": [
+      2.5,
+      4.5
+    ],
+    "effect_thresholds": {
+      "marked_improvement": 15,
+      "mild_improvement": 5,
+      "mild_decline": -5,
+      "marked_decline": -15
+    },
+    "immersion_stages": [
+      "C",
+      "D",
+      "E",
+      "immersion",
+      "after_immersion"
+    ]
+  },
+  "sample_count": 10,
+  "results": [
+    {
+      "before_sample_id": "U001",
+      "before": {
+        "stage": "before",
+        "state_score": 96.938,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 96.938,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 9,
+          "depression_level": "轻度抑郁症状"
+        },
+        "physiology": {
+          "score": 96.938,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 73.4,
+              "std": 6.036,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 18.7,
+              "std": 2.282,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 91.25
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.272,
+              "std": 2.12,
+              "adjacent_repeat_ratio": 0.22,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.91,
+              "std": 0.228,
+              "adjacent_repeat_ratio": 0.008
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.927,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U002",
+      "before": {
+        "stage": "before",
+        "state_score": 93.875,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 93.875,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 10,
+          "depression_level": "中度抑郁症状"
+        },
+        "physiology": {
+          "score": 93.875,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 77.1,
+              "std": 6.532,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 19.4,
+              "std": 2.874,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 82.5
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.568,
+              "std": 2.186,
+              "adjacent_repeat_ratio": 0.085,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.94,
+              "std": 0.233,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.913,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U003",
+      "before": {
+        "stage": "before",
+        "state_score": 100.0,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 100.0,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 3,
+          "depression_level": "无明显抑郁"
+        },
+        "physiology": {
+          "score": 100.0,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 78.7,
+              "std": 5.581,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 17.5,
+              "std": 1.031,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.696,
+              "std": 2.389,
+              "adjacent_repeat_ratio": 0.136,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 37.07,
+              "std": 0.279,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.853,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U004",
+      "before": {
+        "stage": "before",
+        "state_score": 91.95,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 91.95,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 11,
+          "depression_level": "中度抑郁症状"
+        },
+        "physiology": {
+          "score": 91.95,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 84.6,
+              "std": 6.041,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 77.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 15.6,
+              "std": 2.043,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 3.168,
+              "std": 2.3,
+              "adjacent_repeat_ratio": 0.068,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 37.07,
+              "std": 0.149,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 1.003,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U005",
+      "before": {
+        "stage": "before",
+        "state_score": 100.0,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 100.0,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 14,
+          "depression_level": "中度抑郁症状"
+        },
+        "physiology": {
+          "score": 100.0,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 73.1,
+              "std": 4.026,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 16.7,
+              "std": 1.983,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.248,
+              "std": 2.199,
+              "adjacent_repeat_ratio": 0.271,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 37.12,
+              "std": 0.258,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.955,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U006",
+      "before": {
+        "stage": "before",
+        "state_score": 86.875,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 86.875,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 4,
+          "depression_level": "无明显抑郁"
+        },
+        "physiology": {
+          "score": 86.875,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 87.5,
+              "std": 8.278,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 62.5
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 18.0,
+              "std": 1.941,
+              "adjacent_repeat_ratio": 0.008,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 3.4,
+              "std": 2.56,
+              "adjacent_repeat_ratio": 0.085,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.82,
+              "std": 0.183,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.881,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U007",
+      "before": {
+        "stage": "before",
+        "state_score": 87.05,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 87.05,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 17,
+          "depression_level": "中重度抑郁症状"
+        },
+        "physiology": {
+          "score": 87.05,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 82.9,
+              "std": 8.568,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 85.5
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 19.8,
+              "std": 1.657,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 77.5
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 3.032,
+              "std": 2.475,
+              "adjacent_repeat_ratio": 0.136,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.69,
+              "std": 0.151,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.893,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U008",
+      "before": {
+        "stage": "before",
+        "state_score": 89.938,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 89.938,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 18,
+          "depression_level": "中重度抑郁症状"
+        },
+        "physiology": {
+          "score": 89.938,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 78.5,
+              "std": 6.261,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 20.3,
+              "std": 2.317,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 71.25
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.68,
+              "std": 2.305,
+              "adjacent_repeat_ratio": 0.068,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 37.0,
+              "std": 0.238,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.894,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U009",
+      "before": {
+        "stage": "before",
+        "state_score": 100.0,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 100.0,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 14,
+          "depression_level": "中度抑郁症状"
+        },
+        "physiology": {
+          "score": 100.0,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 78.8,
+              "std": 7.554,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 16.8,
+              "std": 1.616,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.704,
+              "std": 2.226,
+              "adjacent_repeat_ratio": 0.102,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.58,
+              "std": 0.138,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.915,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    },
+    {
+      "before_sample_id": "U010",
+      "before": {
+        "stage": "before",
+        "state_score": 97.2,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 97.2,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 16,
+          "depression_level": "中重度抑郁症状"
+        },
+        "physiology": {
+          "score": 97.2,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 81.6,
+              "std": 7.892,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 92.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 18.0,
+              "std": 2.05,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.928,
+              "std": 2.285,
+              "adjacent_repeat_ratio": 0.034,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.6,
+              "std": 0.129,
+              "adjacent_repeat_ratio": 0.008
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.885,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      }
+    }
+  ]
+}

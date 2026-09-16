@@ -1,0 +1,2418 @@
+{
+  "version": "recommendation_catalog_v2",
+  "defaultSampleId": "U002",
+  "notes": "U001 is the real extracted pretest; all other pretests and every posttest are simulated.",
+  "videos": [
+    {
+      "videoId": "2_9",
+      "fileName": "2_9.mp4",
+      "title": "暖色山峦日落",
+      "sceneCategory": "山景日落",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "日落",
+        "群山",
+        "晚霞"
+      ],
+      "moodKeywords": [
+        "温暖",
+        "平静",
+        "舒缓"
+      ],
+      "vector": {
+        "dim1_valence": 0.55,
+        "dim2_relaxation_inducibility": 0.88,
+        "dim3_arousal": 0.18,
+        "dim4_safety": 0.92,
+        "dim5_visual_rhythm": 0.08,
+        "dim6_function": 0.12
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/2_9.mp4"
+    },
+    {
+      "videoId": "2_10",
+      "fileName": "2_10.mp4",
+      "title": "云下雪峰",
+      "sceneCategory": "雪山",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "雪峰",
+        "云层",
+        "山脉"
+      ],
+      "moodKeywords": [
+        "宁静",
+        "开阔",
+        "肃穆"
+      ],
+      "vector": {
+        "dim1_valence": 0.35,
+        "dim2_relaxation_inducibility": 0.75,
+        "dim3_arousal": 0.25,
+        "dim4_safety": 0.78,
+        "dim5_visual_rhythm": 0.18,
+        "dim6_function": 0.18
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/2_10.mp4"
+    },
+    {
+      "videoId": "2_25",
+      "fileName": "2_25.mp4",
+      "title": "群山日出云涌",
+      "sceneCategory": "山景日出",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "日出",
+        "群山",
+        "云雾"
+      ],
+      "moodKeywords": [
+        "希望",
+        "明亮",
+        "开阔"
+      ],
+      "vector": {
+        "dim1_valence": 0.72,
+        "dim2_relaxation_inducibility": 0.78,
+        "dim3_arousal": 0.32,
+        "dim4_safety": 0.88,
+        "dim5_visual_rhythm": 0.32,
+        "dim6_function": 0.22
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/2_25.mp4"
+    },
+    {
+      "videoId": "2_27",
+      "fileName": "2_27.mp4",
+      "title": "雪山景观切换",
+      "sceneCategory": "雪山",
+      "functionTag": "正念",
+      "contentKeywords": [
+        "雪山",
+        "云雾",
+        "镜头切换"
+      ],
+      "moodKeywords": [
+        "壮阔",
+        "清冷",
+        "专注"
+      ],
+      "vector": {
+        "dim1_valence": 0.45,
+        "dim2_relaxation_inducibility": 0.64,
+        "dim3_arousal": 0.38,
+        "dim4_safety": 0.82,
+        "dim5_visual_rhythm": 0.42,
+        "dim6_function": 0.28
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": true,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/2_27.mp4"
+    },
+    {
+      "videoId": "2_29",
+      "fileName": "2_29.mp4",
+      "title": "蓝天下的翠绿群山",
+      "sceneCategory": "绿色山景",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "青山",
+        "蓝天",
+        "白云"
+      ],
+      "moodKeywords": [
+        "清新",
+        "明快",
+        "舒展"
+      ],
+      "vector": {
+        "dim1_valence": 0.68,
+        "dim2_relaxation_inducibility": 0.82,
+        "dim3_arousal": 0.25,
+        "dim4_safety": 0.92,
+        "dim5_visual_rhythm": 0.2,
+        "dim6_function": 0.18
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/2_29.mp4"
+    },
+    {
+      "videoId": "5_11",
+      "fileName": "5_11.mp4",
+      "title": "城市建设航拍",
+      "sceneCategory": "城市建设",
+      "functionTag": "正念",
+      "contentKeywords": [
+        "城市",
+        "建筑",
+        "塔吊",
+        "航拍"
+      ],
+      "moodKeywords": [
+        "开阔",
+        "现实",
+        "活跃"
+      ],
+      "vector": {
+        "dim1_valence": 0.2,
+        "dim2_relaxation_inducibility": 0.38,
+        "dim3_arousal": 0.45,
+        "dim4_safety": 0.7,
+        "dim5_visual_rhythm": 0.35,
+        "dim6_function": 0.55
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/5_11.mp4"
+    },
+    {
+      "videoId": "5_13",
+      "fileName": "5_13.mp4",
+      "title": "静谧荷塘",
+      "sceneCategory": "荷塘",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "荷叶",
+        "荷花",
+        "池塘"
+      ],
+      "moodKeywords": [
+        "静谧",
+        "柔和",
+        "自然"
+      ],
+      "vector": {
+        "dim1_valence": 0.7,
+        "dim2_relaxation_inducibility": 0.92,
+        "dim3_arousal": 0.12,
+        "dim4_safety": 0.97,
+        "dim5_visual_rhythm": 0.08,
+        "dim6_function": 0.1
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/5_13.mp4"
+    },
+    {
+      "videoId": "5_16",
+      "fileName": "5_16.mp4",
+      "title": "晨光雪山",
+      "sceneCategory": "雪山日照",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "雪山",
+        "晨光",
+        "蓝天"
+      ],
+      "moodKeywords": [
+        "明亮",
+        "希望",
+        "宁静"
+      ],
+      "vector": {
+        "dim1_valence": 0.65,
+        "dim2_relaxation_inducibility": 0.8,
+        "dim3_arousal": 0.26,
+        "dim4_safety": 0.9,
+        "dim5_visual_rhythm": 0.18,
+        "dim6_function": 0.18
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/5_16.mp4"
+    },
+    {
+      "videoId": "5_17",
+      "fileName": "5_17.mp4",
+      "title": "山巅云海",
+      "sceneCategory": "云海山景",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "云海",
+        "山峰",
+        "天空"
+      ],
+      "moodKeywords": [
+        "空灵",
+        "平静",
+        "辽阔"
+      ],
+      "vector": {
+        "dim1_valence": 0.58,
+        "dim2_relaxation_inducibility": 0.85,
+        "dim3_arousal": 0.2,
+        "dim4_safety": 0.91,
+        "dim5_visual_rhythm": 0.18,
+        "dim6_function": 0.15
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/5_17.mp4"
+    },
+    {
+      "videoId": "6_5",
+      "fileName": "6_5.mp4",
+      "title": "海岸湿地航拍",
+      "sceneCategory": "海岸湿地",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "湿地",
+        "海岸",
+        "航拍"
+      ],
+      "moodKeywords": [
+        "自由",
+        "开阔",
+        "清爽"
+      ],
+      "vector": {
+        "dim1_valence": 0.62,
+        "dim2_relaxation_inducibility": 0.75,
+        "dim3_arousal": 0.28,
+        "dim4_safety": 0.9,
+        "dim5_visual_rhythm": 0.28,
+        "dim6_function": 0.2
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/6_5.mp4"
+    },
+    {
+      "videoId": "6_7",
+      "fileName": "6_7.mp4",
+      "title": "荷尖蜻蜓",
+      "sceneCategory": "荷塘特写",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "蜻蜓",
+        "荷花",
+        "自然特写"
+      ],
+      "moodKeywords": [
+        "生机",
+        "柔和",
+        "专注"
+      ],
+      "vector": {
+        "dim1_valence": 0.75,
+        "dim2_relaxation_inducibility": 0.9,
+        "dim3_arousal": 0.16,
+        "dim4_safety": 0.96,
+        "dim5_visual_rhythm": 0.06,
+        "dim6_function": 0.1
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/6_7.mp4"
+    },
+    {
+      "videoId": "6_13",
+      "fileName": "6_13.mp4",
+      "title": "蓝天流云",
+      "sceneCategory": "天空云景",
+      "functionTag": "安抚",
+      "contentKeywords": [
+        "蓝天",
+        "白云",
+        "天空"
+      ],
+      "moodKeywords": [
+        "轻盈",
+        "明朗",
+        "舒展"
+      ],
+      "vector": {
+        "dim1_valence": 0.68,
+        "dim2_relaxation_inducibility": 0.88,
+        "dim3_arousal": 0.15,
+        "dim4_safety": 0.96,
+        "dim5_visual_rhythm": 0.12,
+        "dim6_function": 0.1
+      },
+      "safetyFlags": {
+        "contains_sudden_transition": false,
+        "contains_dark_threatening_elements": false,
+        "contains_flashing": false,
+        "contains_people": false
+      },
+      "url": "assets/video/library/6_13.mp4"
+    }
+  ],
+  "samples": [
+    {
+      "sampleId": "U001",
+      "sourceType": "real_extracted",
+      "score": {
+        "stage": "before",
+        "state_score": 96.938,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 96.938,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 9,
+          "depression_level": "轻度抑郁症状"
+        },
+        "physiology": {
+          "score": 96.938,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 73.4,
+              "std": 6.036,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 18.7,
+              "std": 2.282,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 91.25
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.272,
+              "std": 2.12,
+              "adjacent_repeat_ratio": 0.22,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.91,
+              "std": 0.228,
+              "adjacent_repeat_ratio": 0.008
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.927,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U001",
+        "after_sample_id": null,
+        "risk_level": "normal",
+        "user_profile": {
+          "risk": {
+            "level": "normal",
+            "phq9": 9.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "normal",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.03061999999999998,
+          "dim3_arousal_limit": 0.85,
+          "dim4_safety_need": 0.5,
+          "dim5_visual_rhythm_limit": 0.85,
+          "dim6_function_need": 0.55,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "认知重构",
+        "recalled_function_mode": "正念",
+        "fallback_used": true,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "5_11",
+            "title": "城市建设航拍",
+            "function_tag": "正念",
+            "scene_category": "城市建设",
+            "score": 0.815124,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_27",
+            "title": "雪山景观切换",
+            "function_tag": "正念",
+            "scene_category": "雪山",
+            "score": 0.745874,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 2,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U002",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 93.875,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 93.875,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 10,
+          "depression_level": "中度抑郁症状"
+        },
+        "physiology": {
+          "score": 93.875,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 77.1,
+              "std": 6.532,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 19.4,
+              "std": 2.874,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 82.5
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.568,
+              "std": 2.186,
+              "adjacent_repeat_ratio": 0.085,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.94,
+              "std": 0.233,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.913,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U002",
+        "after_sample_id": null,
+        "risk_level": "moderate",
+        "user_profile": {
+          "risk": {
+            "level": "moderate",
+            "phq9": 10.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "moderate",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.31125,
+          "dim3_arousal_limit": 0.65,
+          "dim4_safety_need": 0.5166666666666666,
+          "dim5_visual_rhythm_limit": 0.65,
+          "dim6_function_need": 0.55,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "认知重构",
+        "recalled_function_mode": "正念",
+        "fallback_used": true,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "5_11",
+            "title": "城市建设航拍",
+            "function_tag": "正念",
+            "scene_category": "城市建设",
+            "score": 0.872083,
+            "reasons": [
+              "放松诱导力匹配",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_27",
+            "title": "雪山景观切换",
+            "function_tag": "正念",
+            "scene_category": "雪山",
+            "score": 0.803333,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 2,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U003",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 100.0,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 100.0,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 3,
+          "depression_level": "无明显抑郁"
+        },
+        "physiology": {
+          "score": 100.0,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 78.7,
+              "std": 5.581,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 17.5,
+              "std": 1.031,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.696,
+              "std": 2.389,
+              "adjacent_repeat_ratio": 0.136,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 37.07,
+              "std": 0.279,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.853,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U003",
+        "after_sample_id": null,
+        "risk_level": "normal",
+        "user_profile": {
+          "risk": {
+            "level": "normal",
+            "phq9": 3.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "normal",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.0,
+          "dim3_arousal_limit": 0.85,
+          "dim4_safety_need": 0.39999999999999997,
+          "dim5_visual_rhythm_limit": 0.85,
+          "dim6_function_need": 0.55,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "认知重构",
+        "recalled_function_mode": "正念",
+        "fallback_used": true,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "5_11",
+            "title": "城市建设航拍",
+            "function_tag": "正念",
+            "scene_category": "城市建设",
+            "score": 0.804,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_27",
+            "title": "雪山景观切换",
+            "function_tag": "正念",
+            "scene_category": "雪山",
+            "score": 0.73175,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 2,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U004",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 91.95,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 91.95,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 11,
+          "depression_level": "中度抑郁症状"
+        },
+        "physiology": {
+          "score": 91.95,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 84.6,
+              "std": 6.041,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 77.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 15.6,
+              "std": 2.043,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 3.168,
+              "std": 2.3,
+              "adjacent_repeat_ratio": 0.068,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 37.07,
+              "std": 0.149,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 1.003,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U004",
+        "after_sample_id": null,
+        "risk_level": "moderate",
+        "user_profile": {
+          "risk": {
+            "level": "moderate",
+            "phq9": 11.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "moderate",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.3305,
+          "dim3_arousal_limit": 0.65,
+          "dim4_safety_need": 0.5333333333333333,
+          "dim5_visual_rhythm_limit": 0.65,
+          "dim6_function_need": 0.55,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "认知重构",
+        "recalled_function_mode": "正念",
+        "fallback_used": true,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "5_11",
+            "title": "城市建设航拍",
+            "function_tag": "正念",
+            "scene_category": "城市建设",
+            "score": 0.876767,
+            "reasons": [
+              "放松诱导力匹配",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_27",
+            "title": "雪山景观切换",
+            "function_tag": "正念",
+            "scene_category": "雪山",
+            "score": 0.808517,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 2,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U005",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 100.0,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 100.0,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 14,
+          "depression_level": "中度抑郁症状"
+        },
+        "physiology": {
+          "score": 100.0,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 73.1,
+              "std": 4.026,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 16.7,
+              "std": 1.983,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.248,
+              "std": 2.199,
+              "adjacent_repeat_ratio": 0.271,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 37.12,
+              "std": 0.258,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.955,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U005",
+        "after_sample_id": null,
+        "risk_level": "moderate",
+        "user_profile": {
+          "risk": {
+            "level": "moderate",
+            "phq9": 14.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "moderate",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.25,
+          "dim3_arousal_limit": 0.65,
+          "dim4_safety_need": 0.5833333333333333,
+          "dim5_visual_rhythm_limit": 0.65,
+          "dim6_function_need": 0.55,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "认知重构",
+        "recalled_function_mode": "正念",
+        "fallback_used": true,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "5_11",
+            "title": "城市建设航拍",
+            "function_tag": "正念",
+            "scene_category": "城市建设",
+            "score": 0.863167,
+            "reasons": [
+              "放松诱导力匹配",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_27",
+            "title": "雪山景观切换",
+            "function_tag": "正念",
+            "scene_category": "雪山",
+            "score": 0.796417,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 2,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U006",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 86.875,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 86.875,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 4,
+          "depression_level": "无明显抑郁"
+        },
+        "physiology": {
+          "score": 86.875,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 87.5,
+              "std": 8.278,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 62.5
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 18.0,
+              "std": 1.941,
+              "adjacent_repeat_ratio": 0.008,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 3.4,
+              "std": 2.56,
+              "adjacent_repeat_ratio": 0.085,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.82,
+              "std": 0.183,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.881,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U006",
+        "after_sample_id": null,
+        "risk_level": "normal",
+        "user_profile": {
+          "risk": {
+            "level": "normal",
+            "phq9": 4.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "normal",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.13124999999999998,
+          "dim3_arousal_limit": 0.85,
+          "dim4_safety_need": 0.41666666666666663,
+          "dim5_visual_rhythm_limit": 0.85,
+          "dim6_function_need": 0.55,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "认知重构",
+        "recalled_function_mode": "正念",
+        "fallback_used": true,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "5_11",
+            "title": "城市建设航拍",
+            "function_tag": "正念",
+            "scene_category": "城市建设",
+            "score": 0.831083,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_27",
+            "title": "雪山景观切换",
+            "function_tag": "正念",
+            "scene_category": "雪山",
+            "score": 0.759333,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 2,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U007",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 87.05,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 87.05,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 17,
+          "depression_level": "中重度抑郁症状"
+        },
+        "physiology": {
+          "score": 87.05,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 82.9,
+              "std": 8.568,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 85.5
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 19.8,
+              "std": 1.657,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 77.5
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 3.032,
+              "std": 2.475,
+              "adjacent_repeat_ratio": 0.136,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.69,
+              "std": 0.151,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.893,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U007",
+        "after_sample_id": null,
+        "risk_level": "high",
+        "user_profile": {
+          "risk": {
+            "level": "high",
+            "phq9": 17.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "high",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.37950000000000006,
+          "dim3_arousal_limit": 0.5,
+          "dim4_safety_need": 0.85,
+          "dim5_visual_rhythm_limit": 0.5,
+          "dim6_function_need": 0.2,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "安抚",
+        "recalled_function_mode": "安抚",
+        "fallback_used": false,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "6_5",
+            "title": "海岸湿地航拍",
+            "function_tag": "安抚",
+            "scene_category": "海岸湿地",
+            "score": 0.8394,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_10",
+            "title": "云下雪峰",
+            "function_tag": "安抚",
+            "scene_category": "雪山",
+            "score": 0.83315,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 3,
+            "video_id": "5_16",
+            "title": "晨光雪山",
+            "function_tag": "安抚",
+            "scene_category": "雪山日照",
+            "score": 0.82615,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 4,
+            "video_id": "2_29",
+            "title": "蓝天下的翠绿群山",
+            "function_tag": "安抚",
+            "scene_category": "绿色山景",
+            "score": 0.82415,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 5,
+            "video_id": "5_17",
+            "title": "山巅云海",
+            "function_tag": "安抚",
+            "scene_category": "云海山景",
+            "score": 0.822025,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 10,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U008",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 89.938,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 89.938,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 18,
+          "depression_level": "中重度抑郁症状"
+        },
+        "physiology": {
+          "score": 89.938,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 78.5,
+              "std": 6.261,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 20.3,
+              "std": 2.317,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 71.25
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.68,
+              "std": 2.305,
+              "adjacent_repeat_ratio": 0.068,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 37.0,
+              "std": 0.238,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.894,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U008",
+        "after_sample_id": null,
+        "risk_level": "high",
+        "user_profile": {
+          "risk": {
+            "level": "high",
+            "phq9": 18.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "high",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.35061999999999993,
+          "dim3_arousal_limit": 0.5,
+          "dim4_safety_need": 0.85,
+          "dim5_visual_rhythm_limit": 0.5,
+          "dim6_function_need": 0.2,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "安抚",
+        "recalled_function_mode": "安抚",
+        "fallback_used": false,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "6_5",
+            "title": "海岸湿地航拍",
+            "function_tag": "安抚",
+            "scene_category": "海岸湿地",
+            "score": 0.833624,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_10",
+            "title": "云下雪峰",
+            "function_tag": "安抚",
+            "scene_category": "雪山",
+            "score": 0.827374,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 3,
+            "video_id": "5_16",
+            "title": "晨光雪山",
+            "function_tag": "安抚",
+            "scene_category": "雪山日照",
+            "score": 0.820374,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 4,
+            "video_id": "2_29",
+            "title": "蓝天下的翠绿群山",
+            "function_tag": "安抚",
+            "scene_category": "绿色山景",
+            "score": 0.818374,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 5,
+            "video_id": "5_17",
+            "title": "山巅云海",
+            "function_tag": "安抚",
+            "scene_category": "云海山景",
+            "score": 0.816249,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 10,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U009",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 100.0,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 100.0,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 14,
+          "depression_level": "中度抑郁症状"
+        },
+        "physiology": {
+          "score": 100.0,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 78.8,
+              "std": 7.554,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 16.8,
+              "std": 1.616,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.704,
+              "std": 2.226,
+              "adjacent_repeat_ratio": 0.102,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.58,
+              "std": 0.138,
+              "adjacent_repeat_ratio": 0.0
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.915,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U009",
+        "after_sample_id": null,
+        "risk_level": "moderate",
+        "user_profile": {
+          "risk": {
+            "level": "moderate",
+            "phq9": 14.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "moderate",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.25,
+          "dim3_arousal_limit": 0.65,
+          "dim4_safety_need": 0.5833333333333333,
+          "dim5_visual_rhythm_limit": 0.65,
+          "dim6_function_need": 0.55,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "认知重构",
+        "recalled_function_mode": "正念",
+        "fallback_used": true,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "5_11",
+            "title": "城市建设航拍",
+            "function_tag": "正念",
+            "scene_category": "城市建设",
+            "score": 0.863167,
+            "reasons": [
+              "放松诱导力匹配",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_27",
+            "title": "雪山景观切换",
+            "function_tag": "正念",
+            "scene_category": "雪山",
+            "score": 0.796417,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 2,
+          "expression_used": true
+        }
+      }
+    },
+    {
+      "sampleId": "U010",
+      "sourceType": "simulated",
+      "score": {
+        "stage": "before",
+        "state_score": 97.2,
+        "state_components": {
+          "stai_s": null,
+          "mood": null,
+          "physiology": 97.2,
+          "hrv": null
+        },
+        "raw_state_measures": {
+          "stai_s": null,
+          "vas_mood": null,
+          "sam_valence": null,
+          "sam_valence_0_10": null,
+          "sam_arousal": null,
+          "sam_arousal_0_10": null
+        },
+        "mood_sources": [],
+        "sam_arousal": null,
+        "sam_arousal_0_10": null,
+        "baseline_context": {
+          "phq9_total": 16,
+          "depression_level": "中重度抑郁症状"
+        },
+        "physiology": {
+          "score": 97.2,
+          "components": {
+            "heart_rate": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 81.6,
+              "std": 7.892,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 92.0
+            },
+            "respiration": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 18.0,
+              "std": 2.05,
+              "adjacent_repeat_ratio": 0.0,
+              "score": 100.0
+            },
+            "eda": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 2.928,
+              "std": 2.285,
+              "adjacent_repeat_ratio": 0.034,
+              "score": 100.0
+            },
+            "temperature": {
+              "raw_count": 120,
+              "valid_count": 120,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.5,
+              "mean": 36.6,
+              "std": 0.129,
+              "adjacent_repeat_ratio": 0.008
+            },
+            "spo2": {
+              "raw_count": 60,
+              "valid_count": 60,
+              "valid_ratio": 1.0,
+              "duration_sec": 59.0,
+              "mean": 97.0,
+              "std": 0.885,
+              "adjacent_repeat_ratio": 0.0
+            }
+          },
+          "used_metrics": [
+            "heart_rate",
+            "respiration",
+            "eda"
+          ],
+          "risk_flags": []
+        },
+        "hrv": {
+          "score": null,
+          "rmssd_ms": null,
+          "lnrmssd": null,
+          "quality": {
+            "raw_count": 0,
+            "valid_count": 0,
+            "valid_ratio": 0.0,
+            "duration_sec": null,
+            "mean": null,
+            "std": null,
+            "adjacent_repeat_ratio": null
+          },
+          "risk_flags": [
+            "hrv_unavailable"
+          ]
+        },
+        "immediate_feedback": {
+          "text_present": true,
+          "evidence": {},
+          "risk_flags": []
+        },
+        "used_metrics": [
+          "physiology"
+        ],
+        "missing_metrics": [
+          "stai_s",
+          "mood",
+          "hrv"
+        ],
+        "risk_flags": [
+          "hrv_unavailable"
+        ],
+        "data_quality": "fair"
+      },
+      "recommendation": {
+        "before_sample_id": "U010",
+        "after_sample_id": null,
+        "risk_level": "high",
+        "user_profile": {
+          "risk": {
+            "level": "high",
+            "phq9": 16.0,
+            "gad7": 0.0,
+            "risk_flags": [
+              "hrv_unavailable"
+            ],
+            "risk_terms": []
+          },
+          "risk_level": "high",
+          "dim1_valence": 0.0,
+          "dim2_relaxation_need": 0.278,
+          "dim3_arousal_limit": 0.5,
+          "dim4_safety_need": 0.85,
+          "dim5_visual_rhythm_limit": 0.5,
+          "dim6_function_need": 0.2,
+          "source_metrics": [
+            "physiology"
+          ],
+          "missing_metrics": [
+            "stai_s",
+            "mood",
+            "hrv"
+          ],
+          "expression_used": true
+        },
+        "target_function_mode": "安抚",
+        "recalled_function_mode": "安抚",
+        "fallback_used": false,
+        "recommendations": [
+          {
+            "rank": 1,
+            "video_id": "6_5",
+            "title": "海岸湿地航拍",
+            "function_tag": "安抚",
+            "scene_category": "海岸湿地",
+            "score": 0.8191,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 2,
+            "video_id": "2_10",
+            "title": "云下雪峰",
+            "function_tag": "安抚",
+            "scene_category": "雪山",
+            "score": 0.81285,
+            "reasons": [
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 3,
+            "video_id": "5_16",
+            "title": "晨光雪山",
+            "function_tag": "安抚",
+            "scene_category": "雪山日照",
+            "score": 0.80585,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 4,
+            "video_id": "2_29",
+            "title": "蓝天下的翠绿群山",
+            "function_tag": "安抚",
+            "scene_category": "绿色山景",
+            "score": 0.80385,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          },
+          {
+            "rank": 5,
+            "video_id": "5_17",
+            "title": "山巅云海",
+            "function_tag": "安抚",
+            "scene_category": "云海山景",
+            "score": 0.801725,
+            "reasons": [
+              "高安全感",
+              "唤醒度在当前上限内",
+              "视觉节奏适配"
+            ]
+          }
+        ],
+        "audit": {
+          "blocked_videos": {},
+          "history_filtered_count": 0,
+          "safe_candidate_count": 12,
+          "recalled_count": 10,
+          "expression_used": true
+        }
+      }
+    }
+  ]
+}
