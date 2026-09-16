@@ -85,7 +85,7 @@ body:has(.guide-intro) footer,body:has(.guide-select) footer{display:none}
 body:has(.guide-intro) #companion,body:has(.guide-select) #companion{display:none!important}
 .guide-intro{position:fixed;inset:0;z-index:10;width:100%;height:100vh;overflow:hidden;background:#061820;color:#f7f2e7}
 .guide-intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#061820}
-.guide-intro-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(4,20,27,.82) 0%,rgba(4,20,27,.22) 46%,rgba(4,20,27,.08)),linear-gradient(0deg,rgba(4,20,27,.6),transparent 42%)}
+.guide-intro-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(4,20,27,.48) 0%,rgba(4,20,27,.12) 38%,transparent 70%),linear-gradient(0deg,rgba(4,20,27,.38),transparent 36%)}
 .guide-intro-copy{position:absolute;left:clamp(36px,7vw,132px);bottom:clamp(70px,12vh,150px);z-index:2;text-shadow:0 2px 25px rgba(0,0,0,.45)}
 .guide-intro-copy>span,.guide-select-head>span{font:500 11px/1.2 system-ui;letter-spacing:.28em;color:#d7b66d}
 .guide-intro-copy h2{margin:14px 0 8px;font:400 clamp(42px,6vw,86px)/1.05 serif;letter-spacing:.08em}
@@ -161,3 +161,58 @@ body:has(.guide-intro) #companion,body:has(.guide-select) #companion{display:non
  .page.narrow>.items .item p{font-size:11px;line-height:1.45}
  .page.narrow>.actions{margin-top:10px}
 }
+
+/* Homepage header spans edge to edge; the old outer margin exposed a black block beside the logo. */
+body.welcome>header{margin:0!important;padding:0 5%;width:100%;background:#101e29}
+
+/* Each therapy goal has a quiet visual example while keeping the choice screen sparse. */
+.preview-goal{background-position:center;background-size:cover}
+.preview-goal.goal-relax{background-image:url('assets/images/coast-v2.png')}
+.preview-goal.goal-sleep{background-image:url('assets/images/moon-ocean.png')}
+.preview-goal.goal-focus{background-image:url('assets/images/forest-v2.png')}
+.preview-goal.goal-energy{background-image:url('assets/images/aurora-v2.png')}
+.preview-goal .goal-preview-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,24,31,.9),rgba(7,24,31,.08) 72%)}
+.preview-goal>span,.preview-goal>h3,.preview-goal>p{position:relative;z-index:1;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+
+/* Three-zone report: body status, objective signals, concise interpretation. */
+body.tech:has(.report),body.tech:has(.report) .sky{background:#0b202a!important;color:#edf3f1}
+body.tech:has(.report)>header{background:#0b202a!important;border-bottom:1px solid #7fa5ae24}
+body.tech:has(.report)>main{padding:18px 2.2% 16px!important}
+.report{max-width:none!important;margin:0!important}
+.report>h2{color:#f2f3ed!important;font-size:30px!important;margin:0 0 4px!important}
+.report>.step,.report>.lead{margin-bottom:5px!important;color:#9fb3b9!important}
+.report-context{display:flex;justify-content:space-between;padding:5px 0 9px!important;border-color:#7fa5ae24!important;color:#8fa6ad!important}
+.report-dashboard{display:grid;grid-template-columns:minmax(190px,.72fr) minmax(720px,3.4fr) minmax(220px,.9fr);gap:12px;height:calc(100svh - 205px);min-height:500px}
+.report-dashboard>.report-overview,.report-analysis,.report-data{min-width:0;min-height:0}
+.report-dashboard>.report-overview{display:flex;flex-direction:column;margin:0!important;padding:18px!important;border:1px solid #8fb8bd24!important;border-radius:10px!important;background:linear-gradient(180deg,#153541,#102a35)!important;overflow:hidden}
+.report-dashboard .report-body{height:55%;min-height:210px}
+.report-dashboard .body-scan.reference-body{height:100%!important}
+.report-dashboard .stai-report{position:static!important;width:auto!important;margin-top:auto;padding:14px;background:#102832!important;color:#eef2ed!important;border:1px solid #8fb8bd25!important}
+.report-dashboard .stai-report p{color:#9eb1b7!important}
+.report-data{display:flex;flex-direction:column;overflow:hidden}
+.report-data .report-section-title{margin:0 0 5px!important;min-height:20px}
+.report-data .report-section-title:nth-of-type(2){margin-top:7px!important}
+.report-data .report-section-title h3{color:#e7eeeb!important;font-size:12px!important}
+.report-data .report-section-title>span{color:#8fa6ad!important}
+.report-data .signal-grid,.report-data .eeg-grid{gap:6px!important;border:0!important}
+.report-data .signal-grid{height:42%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.report-data .eeg-grid{height:45%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+.report-data .panel{min-width:0;min-height:0;padding:10px 12px!important;background:#102b36!important;border:1px solid #8fb8bd1f!important;border-radius:7px!important;color:#dfe9e7!important;overflow:hidden}
+.report-data .panel+.panel{border-left:1px solid #8fb8bd1f!important}
+.report-data .signal-panel h3,.report-data .emotion-panel h3{color:#dfe9e7!important;margin:0 0 5px!important;font-size:11px!important}
+.report-data .signal-panel h3 small,.report-data .emotion-panel h3 small{color:#8199a1!important}
+.report-data .signal-values{font-size:20px!important;color:#7f97b4!important;line-height:1}
+.report-data .signal-values strong,.report-data .emotion-panel strong{color:#65c8bd!important}
+.report-data .signal-chart{height:72px!important}
+.report-data .signal-chart text{fill:#78929a!important;font-size:8px}
+.report-data .signal-detail{display:none}
+.report-data .emotion-panel>p,.report-data .signal-note,.report-data .emotion-row{color:#8fa5ac!important;font-size:9px!important;margin:3px 0!important}
+.report-data .emotion-row i{background:#7186a4!important}.report-data .emotion-row i+i{background:#4bb4aa!important}
+.report-analysis{padding:22px 19px;border:1px solid #8fb8bd24;border-radius:10px;background:linear-gradient(160deg,#143440,#0f2833);overflow:hidden}
+.report-analysis h3{font:400 24px/1.5 'Songti SC','SimSun',serif;margin:12px 0 16px;color:#f0eee6}
+.report-analysis p{font-size:12px;line-height:2;color:#b2c3c5}
+.report-analysis .next-suggestion{margin-top:22px;padding:20px 0 0!important;border-left:0!important;border-top:1px solid #91aeb429}
+.report-analysis small{display:block;margin-top:22px;color:#738d95}
+body.tech:has(.report) .report-method,body.tech:has(.report) .report-finish{display:none}
+@media(max-width:1100px){.report-dashboard{grid-template-columns:180px 1fr}.report-analysis{display:none}.report-data .signal-grid,.report-data .eeg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){body.tech:has(.report){overflow:auto}.report-dashboard{display:block;height:auto}.report-dashboard>.report-overview,.report-analysis{margin-bottom:12px}.report-analysis{display:block}.report-data{overflow:visible}.report-data .signal-grid,.report-data .eeg-grid{height:auto;grid-template-columns:1fr 1fr}}
