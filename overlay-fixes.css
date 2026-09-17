@@ -207,6 +207,9 @@ body.welcome>header{margin:0!important;padding:0 5%;width:100%;background:#101e2
 .scene-cover.mode-chinese.tone-zhi{background-position:75% center!important}
 .scene-cover.mode-chinese.tone-yu{background-position:100% center!important}
 .scene-cover.mode-chinese:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,20,27,.72),transparent 55%);pointer-events:none}
+.choice-tile.tone-sample span{color:#9fb4bb;transition:color .2s ease}
+.choice-tile.tone-sample:hover span,.choice-tile.tone-sample.sample-playing span{color:#e9c979}
+.choice-tile.tone-sample.sample-playing{border-color:#e2c373!important;background:rgba(226,195,115,.09)!important;box-shadow:inset 3px 0 #e2c373,0 0 0 1px rgba(226,195,115,.12)}
 
 /* Three-zone report: body status, objective signals, concise interpretation. */
 body.tech:has(.report),body.tech:has(.report) .sky{background:#0b202a!important;color:#edf3f1}
@@ -447,5 +450,62 @@ body.tech .page.report .report-analysis>#companion>span{
  body.tech .page.report .report-analysis>#companion .avatar-stage{min-height:250px!important;max-height:360px!important}
  body.tech .page.report .report-analysis>#companion .avatar.fullbody,
  body.tech .page.report .report-analysis>#companion .avatar-canvas{transform:none!important}
+}
+
+/* Keep the report sidebars compact and show both figures in full. */
+@media(min-width:1101px){
+ body.tech .page.report>.report-dashboard{
+  height:min(calc(100svh - 205px),680px)!important;
+  max-height:680px!important;
+ }
+ body.tech .page.report .report-overview{
+  justify-content:flex-start!important;
+ }
+ body.tech .page.report .report-overview .report-body{
+  flex:1 1 auto!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+ }
+ body.tech .page.report .report-overview .body-scan.reference-body{
+  height:100%!important;
+  max-height:none!important;
+  overflow:visible!important;
+ }
+ body.tech .page.report .report-overview .reference-body>img{
+  transform:none!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  mask-image:none!important;
+ }
+ body.tech .page.report .report-overview .stai-report{
+  margin-top:12px!important;
+ }
+ body.tech .page.report .report-analysis>#companion{
+  flex:0 0 220px!important;
+  height:220px!important;
+  min-height:0!important;
+  margin:12px 0 0!important;
+ }
+ body.tech .page.report .report-analysis>#companion .avatar-stage{
+  flex:0 0 190px!important;
+  width:125px!important;
+  height:190px!important;
+  aspect-ratio:380/627!important;
+  min-height:0!important;
+  max-height:none!important;
+ }
+}
+@media(min-width:1101px) and (min-height:900px){
+ body.tech .page.report .report-analysis>#companion{
+  flex-basis:300px!important;
+  height:300px!important;
+ }
+ body.tech .page.report .report-analysis>#companion .avatar-stage{
+  flex-basis:270px!important;
+  width:175px!important;
+  height:270px!important;
+ }
 }
 
