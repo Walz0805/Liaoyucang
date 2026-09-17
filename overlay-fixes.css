@@ -486,12 +486,13 @@ body.tech .page.report .report-analysis>#companion>span{
   flex:0 0 220px!important;
   height:220px!important;
   min-height:0!important;
-  margin:12px 0 0!important;
+  margin:auto 0 18px!important;
+  padding-top:24px!important;
  }
  body.tech .page.report .report-analysis>#companion .avatar-stage{
-  flex:0 0 190px!important;
-  width:125px!important;
-  height:190px!important;
+  flex:0 0 165px!important;
+  width:108px!important;
+  height:165px!important;
   aspect-ratio:380/627!important;
   min-height:0!important;
   max-height:none!important;
@@ -501,11 +502,14 @@ body.tech .page.report .report-analysis>#companion>span{
  body.tech .page.report .report-analysis>#companion{
   flex-basis:300px!important;
   height:300px!important;
+  margin-top:auto!important;
+  margin-bottom:22px!important;
+  padding-top:38px!important;
  }
  body.tech .page.report .report-analysis>#companion .avatar-stage{
-  flex-basis:270px!important;
-  width:175px!important;
-  height:270px!important;
+  flex-basis:235px!important;
+  width:152px!important;
+  height:235px!important;
  }
 }
 
