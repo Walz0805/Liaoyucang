@@ -342,6 +342,30 @@ body.tech:has(.report) .eeg-grid #companion>span{position:relative;z-index:1;col
  }
 }
 
+/* Final wide-screen report rhythm: use the whole card without stretching type. */
+@media(min-width:1101px) and (min-height:760px){
+ body.tech .page.report .report-data .signal-panel{
+  display:flex!important;
+  flex-direction:column!important;
+ }
+ body.tech .page.report .report-data .signal-panel .signal-chart{
+  flex:1 1 auto!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:90px!important;
+  max-height:none!important;
+  margin-top:10px!important;
+ }
+ body.tech .page.report .report-data .signal-panel h3{flex:0 0 auto!important;font-size:12px!important}
+ body.tech .page.report .report-data .signal-values{flex:0 0 auto!important;font-size:22px!important;margin-top:2px!important}
+ body.tech .page.report .report-data .signal-chart text{font-size:9px!important}
+ body.tech .page.report .report-overview{justify-content:space-between!important}
+ body.tech .page.report .report-overview .report-body{flex:1 1 auto!important;height:auto!important;min-height:0!important}
+ body.tech .page.report .report-overview .stai-report{flex:0 0 auto!important;margin-top:18px!important}
+ body.tech .page.report .report-analysis>#companion{justify-content:center!important}
+ body.tech .page.report .report-analysis>#companion .avatar-stage{flex:1 1 auto!important;height:100%!important;max-height:none!important}
+}
+
 /* Report side columns: larger body scan, readable context, and guide beside the notes. */
 body.tech .page.report .report-context>span{
  color:#b8cdd1!important;
