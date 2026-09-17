@@ -84,7 +84,7 @@ body:has(.guide-intro) header,body:has(.guide-select) header{position:absolute;i
 body:has(.guide-intro) footer,body:has(.guide-select) footer{display:none}
 body:has(.guide-intro) #companion,body:has(.guide-select) #companion{display:none!important}
 .guide-intro{position:fixed;inset:0;z-index:10;width:100%;height:100vh;overflow:hidden;background:#061820;color:#f7f2e7}
-.guide-intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#061820}
+.guide-intro video{position:absolute;left:-6%;top:-6%;width:112%;height:112%;max-width:none;object-fit:cover;object-position:center;background:#061820}
 .guide-intro-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(4,20,27,.48) 0%,rgba(4,20,27,.12) 38%,transparent 70%),linear-gradient(0deg,rgba(4,20,27,.38),transparent 36%)}
 .guide-intro-copy{position:absolute;left:clamp(36px,7vw,132px);bottom:clamp(70px,12vh,150px);z-index:2;text-shadow:0 2px 25px rgba(0,0,0,.45)}
 .guide-intro-copy>span,.guide-select-head>span{font:500 11px/1.2 system-ui;letter-spacing:.28em;color:#d7b66d}
@@ -178,7 +178,8 @@ body.welcome>header{margin:0!important;padding:0 5%;width:100%;background:#101e2
 body.tech:has(.report),body.tech:has(.report) .sky{background:#0b202a!important;color:#edf3f1}
 body.tech:has(.report)>header{background:#0b202a!important;border-bottom:1px solid #7fa5ae24}
 body.tech:has(.report)>main{padding:18px 2.2% 16px!important}
-.report{max-width:none!important;margin:0!important}
+.report{display:block!important;max-width:none!important;height:auto!important;margin:0!important}
+.report>*{grid-column:auto!important;grid-row:auto!important}
 .report>h2{color:#f2f3ed!important;font-size:30px!important;margin:0 0 4px!important}
 .report>.step,.report>.lead{margin-bottom:5px!important;color:#9fb3b9!important}
 .report-context{display:flex;justify-content:space-between;padding:5px 0 9px!important;border-color:#7fa5ae24!important;color:#8fa6ad!important}
