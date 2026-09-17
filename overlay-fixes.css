@@ -199,7 +199,7 @@ body.welcome>header{margin:0!important;padding:0 5%;width:100%;background:#101e2
 .preview-sound:after{content:'';position:absolute;right:7%;top:10%;z-index:-1;width:34%;aspect-ratio:1;border:1px solid rgba(224,199,137,.28);border-radius:50%;box-shadow:0 0 0 22px rgba(224,199,137,.035),0 0 0 52px rgba(224,199,137,.02)}
 .preview-sound>span,.preview-sound>h3,.preview-sound>button{position:relative;z-index:1;text-shadow:0 2px 20px rgba(0,0,0,.65)}
 .preview-sound>button{background:rgba(8,32,41,.64)!important;border-color:rgba(202,220,216,.36)!important;color:#edf3ed!important;backdrop-filter:blur(10px)}
-.scene-cover.mode-chinese{background-image:url('assets/images/five-elements-atlas-v1.png')!important;background-size:500% auto!important;background-repeat:no-repeat!important;background-color:#0b202a!important}
+.scene-cover.mode-chinese{background-image:url('assets/images/five-elements-atlas-v1.png')!important;background-size:510% auto!important;background-repeat:no-repeat!important;background-color:#0b202a!important}
 .scene-cover.mode-chinese>.landscape{opacity:0!important}
 .scene-cover.mode-chinese.tone-gong{background-position:0 center!important}
 .scene-cover.mode-chinese.tone-shang{background-position:25% center!important}
@@ -252,6 +252,21 @@ body.tech:has(.report)>main{padding:18px 2.2% 16px!important}
 .report-analysis .next-suggestion{margin-top:22px;padding:20px 0 0!important;border-left:0!important;border-top:1px solid #91aeb429}
 .report-analysis small{display:block;margin-top:22px;color:#738d95}
 body.tech:has(.report) .report-method,body.tech:has(.report) .report-finish{display:none}
+.report-site-footer{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ gap:24px;
+ min-height:76px;
+ margin-top:18px;
+ border-top:1px solid #8fb8bd24;
+ color:#9eb4bb;
+ font-size:11px;
+ letter-spacing:.06em;
+ text-align:center;
+ background:linear-gradient(180deg,transparent,#07182055);
+}
+.report-site-footer i{width:1px;height:18px;background:#8fb8bd38}
 body.tech:has(.report) .eeg-grid #companion{
  background:
   radial-gradient(circle at 50% 38%,rgba(104,196,186,.18),transparent 38%),
@@ -444,6 +459,7 @@ body.tech .page.report .report-analysis>#companion>span{
 }
 @media(min-width:1101px){
  body.tech .page.report .eeg-grid>.panel:last-child{grid-column:3/5!important}
+ body.tech .page.report .eeg-grid>.panel:last-child .signal-chart{width:100%!important;max-width:none!important}
  body.tech .page.report .signal-grid .signal-chart{height:clamp(92px,12vh,132px)!important;margin-top:9px!important}
  body.tech .page.report .eeg-grid .signal-chart{height:clamp(76px,9.5vh,108px)!important;margin-top:7px!important}
  body.tech .page.report .report-analysis>#companion{min-height:280px!important}
@@ -510,6 +526,25 @@ body.tech .page.report .report-analysis>#companion>span{
   flex-basis:235px!important;
   width:152px!important;
   height:235px!important;
+ }
+}
+@media(max-width:760px){
+ .report-site-footer{flex-direction:column;gap:7px;padding:18px 12px;line-height:1.7}
+ .report-site-footer i{width:36px;height:1px}
+}
+@media(min-width:1101px) and (max-height:799px){
+ body.tech .page.report>.report-dashboard{height:calc(100svh - 270px)!important}
+ .report-site-footer{min-height:54px;margin-top:8px;font-size:10px}
+ body.tech .page.report .report-analysis>#companion{
+  flex-basis:125px!important;
+  height:125px!important;
+  padding-top:12px!important;
+  margin-bottom:4px!important;
+ }
+ body.tech .page.report .report-analysis>#companion .avatar-stage{
+  flex-basis:88px!important;
+  width:58px!important;
+  height:88px!important;
  }
 }
 
