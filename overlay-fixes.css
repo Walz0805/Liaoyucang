@@ -188,6 +188,15 @@ body.welcome>header{margin:0!important;padding:0 5%;width:100%;background:#101e2
 .preview-goal .goal-preview-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,24,31,.9),rgba(7,24,31,.08) 72%)}
 .preview-goal>span,.preview-goal>h3,.preview-goal>p{position:relative;z-index:1;text-shadow:0 2px 18px rgba(0,0,0,.5)}
 
+/* Sound-mode preview uses quiet imagery instead of an empty color field. */
+.preview-sound{position:relative;isolation:isolate;overflow:hidden;background-position:center!important;background-size:cover!important;transition:background-image .35s ease}
+.preview-sound.sound-chinese{background-image:url('assets/images/forest-v2.png')!important}
+.preview-sound.sound-western{background-image:url('assets/images/aurora-v2.png')!important}
+.preview-sound:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,28,36,.94),rgba(7,28,36,.68) 48%,rgba(7,28,36,.16)),linear-gradient(0deg,rgba(7,28,36,.72),transparent 58%)}
+.preview-sound:after{content:'';position:absolute;right:7%;top:10%;z-index:-1;width:34%;aspect-ratio:1;border:1px solid rgba(224,199,137,.28);border-radius:50%;box-shadow:0 0 0 22px rgba(224,199,137,.035),0 0 0 52px rgba(224,199,137,.02)}
+.preview-sound>span,.preview-sound>h3,.preview-sound>button{position:relative;z-index:1;text-shadow:0 2px 20px rgba(0,0,0,.65)}
+.preview-sound>button{background:rgba(8,32,41,.64)!important;border-color:rgba(202,220,216,.36)!important;color:#edf3ed!important;backdrop-filter:blur(10px)}
+
 /* Three-zone report: body status, objective signals, concise interpretation. */
 body.tech:has(.report),body.tech:has(.report) .sky{background:#0b202a!important;color:#edf3f1}
 body.tech:has(.report)>header{background:#0b202a!important;border-bottom:1px solid #7fa5ae24}
@@ -382,8 +391,7 @@ body.tech .page.report .report-analysis>#companion .avatar-canvas{
  height:100%!important;
  object-fit:contain!important;
  object-position:center bottom!important;
- transform:scale(1.22)!important;
- transform-origin:center bottom!important;
+ transform:none!important;
 }
 body.tech .page.report .report-analysis>#companion>span{
  display:block!important;
@@ -396,5 +404,11 @@ body.tech .page.report .report-analysis>#companion>span{
 }
 @media(min-width:1101px){
  body.tech .page.report .eeg-grid>.panel:last-child{grid-column:3/5!important}
+ body.tech .page.report .signal-grid .signal-chart{height:clamp(92px,12vh,132px)!important;margin-top:9px!important}
+ body.tech .page.report .eeg-grid .signal-chart{height:clamp(76px,9.5vh,108px)!important;margin-top:7px!important}
+ body.tech .page.report .report-analysis>#companion{min-height:280px!important}
+ body.tech .page.report .report-analysis>#companion .avatar-stage{min-height:250px!important;max-height:360px!important}
+ body.tech .page.report .report-analysis>#companion .avatar.fullbody,
+ body.tech .page.report .report-analysis>#companion .avatar-canvas{transform:none!important}
 }
 
