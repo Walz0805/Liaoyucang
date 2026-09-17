@@ -1,11 +1,11 @@
 import {playNarration,stopNarration,pauseNarration,setNarrationVolume} from './narration.js?v=20260916-4';
 import {mountAvatar} from './avatar-canvas.js?v=20260916-11';
 import {standardFlow,getImmersionPhase} from './experience.js';
-import {reportPanels,reportInsight} from './report-panels.js?v=20260917-3';
+import {reportPanels,reportInsight} from './report-panels.js?v=20260918-4';
 import {getAssessment} from './assessment-service.js';
 import {assessmentAdapter,safetyCheck,recommendationEngine,overrideRecommendation} from './assessment.js';
 import {getDemoRecommendation} from './recommendation-service.js?v=20260916-1';
-document.head?.insertAdjacentHTML?.('beforeend','<link rel="stylesheet" href="refinement.css?v=20260914-1"><link rel="stylesheet" href="overlay-fixes.css?v=20260917-14">');
+document.head?.insertAdjacentHTML?.('beforeend','<link rel="stylesheet" href="refinement.css?v=20260914-1"><link rel="stylesheet" href="overlay-fixes.css?v=20260918-15">');
 const $=s=>document.querySelector(s),app=$('#app');
 const requestedSample=typeof location!=='undefined'?new URLSearchParams(location.search).get('sample'):null;
 const state={page:'home',companion:null,beforeAssessment:null,afterAssessment:null,goal:'relax',instrument:'chinese',tone:'jue',selectedPlan:null,recommendedPlan:null,recommendationSampleId:/^U00[1-9]$|^U010$/.test(requestedSample||'')?requestedSample:'U002',overrideReason:'',duration:120,immersion:{phase:'C',progress:0}};

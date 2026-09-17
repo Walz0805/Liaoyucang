@@ -243,6 +243,12 @@ body.tech:has(.report)>main{padding:18px 2.2% 16px!important}
 .report-data .signal-values strong,.report-data .emotion-panel strong{color:#65c8bd!important}
 .report-data .signal-chart{height:72px!important}
 .report-data .signal-chart text{fill:#78929a!important;font-size:8px}
+.signal-chart-wrap{position:relative;width:100%;min-width:0;flex:1 1 auto;margin-top:7px;overflow:hidden}
+.signal-chart-wrap .signal-chart{display:block;width:100%!important;height:100%!important;margin:0!important}
+.signal-chart-wrap .chart-y,.signal-chart-wrap .chart-x{position:absolute;z-index:2;color:#78929a;font-size:8px;line-height:1;white-space:nowrap;pointer-events:none}
+.signal-chart-wrap .chart-y{left:0;transform:translateY(-50%)}
+.signal-chart-wrap .chart-y-0{top:14%}.signal-chart-wrap .chart-y-1{top:48%}.signal-chart-wrap .chart-y-2{top:82%}
+.signal-chart-wrap .chart-x{bottom:1px}.signal-chart-wrap .chart-x-start{left:11%}.signal-chart-wrap .chart-x-end{right:3%}
 .report-data .signal-detail{display:none}
 .report-data .emotion-panel>p,.report-data .signal-note,.report-data .emotion-row{color:#8fa5ac!important;font-size:9px!important;margin:3px 0!important}
 .report-data .emotion-row i{background:#7186a4!important}.report-data .emotion-row i+i{background:#4bb4aa!important}
@@ -546,5 +552,17 @@ body.tech .page.report .report-analysis>#companion>span{
   width:58px!important;
   height:88px!important;
  }
+}
+
+body.tech .page.report .signal-chart-wrap>.signal-chart{
+ width:100%!important;
+ height:100%!important;
+ min-height:0!important;
+ max-height:none!important;
+ margin:0!important;
+}
+@media(min-width:1101px) and (max-height:799px){
+ body.tech .page.report .eeg-grid>.panel:not(:last-child) .chart-y-1,
+ body.tech .page.report .eeg-grid>.panel:not(:last-child) .chart-x-end{display:none}
 }
 
