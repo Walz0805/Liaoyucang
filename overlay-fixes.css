@@ -99,8 +99,8 @@ body:has(.guide-intro) footer,body:has(.guide-select) footer{display:none}
 body:has(.guide-intro) #companion,body:has(.guide-select) #companion{display:none!important}
 .guide-intro{position:fixed;inset:0;z-index:10;width:100%;height:100vh;overflow:hidden;background:#061820;color:#f7f2e7}
 .guide-intro video{position:absolute;inset:0;width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center;background:#061820}
-.guide-intro .guide-intro-bg{z-index:0;max-width:none;object-fit:cover;filter:blur(26px) brightness(.48) saturate(.75);transform:scale(1.08);background:#061820}
-.guide-intro .guide-intro-main{z-index:1;background:transparent}
+.guide-intro .guide-intro-bg{display:none}
+.guide-intro .guide-intro-main{z-index:1;width:100%;max-width:none;object-fit:cover;object-position:center;background:transparent}
 .immersion .imm-video{inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:#061820!important}
 .guide-intro-shade{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(4,20,27,.48) 0%,rgba(4,20,27,.12) 38%,transparent 70%),linear-gradient(0deg,rgba(4,20,27,.38),transparent 36%)}
 .guide-intro-copy{position:absolute;left:clamp(36px,7vw,132px);bottom:clamp(70px,12vh,150px);z-index:2;text-shadow:0 2px 25px rgba(0,0,0,.45)}
@@ -279,13 +279,15 @@ body.tech:has(.report) .eeg-grid #companion>span{position:relative;z-index:1;col
  }
  body.tech .page.report>.report-dashboard{
   display:grid!important;
-  flex:1 1 auto!important;
-  grid-template-columns:minmax(230px,16%) minmax(0,1fr) minmax(250px,18%)!important;
+  flex:0 1 auto!important;
+  grid-template-columns:clamp(230px,14vw,320px) minmax(0,1fr) clamp(260px,16vw,340px)!important;
   grid-template-rows:minmax(0,1fr)!important;
   align-items:stretch!important;
   width:100%!important;
-  height:auto!important;
+  height:min(calc(100svh - 205px),820px)!important;
+  max-height:820px!important;
   min-height:0!important;
+  margin-inline:auto!important;
   overflow:hidden!important;
  }
  body.tech .page.report>.report-dashboard>.report-overview{

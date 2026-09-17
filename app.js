@@ -5,8 +5,7 @@ import {reportPanels,reportInsight} from './report-panels.js?v=20260917-2';
 import {getAssessment} from './assessment-service.js';
 import {assessmentAdapter,safetyCheck,recommendationEngine,overrideRecommendation} from './assessment.js';
 import {getDemoRecommendation} from './recommendation-service.js?v=20260916-1';
-document.head?.insertAdjacentHTML?.('beforeend','<link rel="stylesheet" href="refinement.css?v=20260914-1"><link rel="stylesheet" href="overlay-fixes.css?v=20260917-10">');
-const logoImage=document.querySelector?.('header .logo img');if(logoImage){logoImage.src='assets/images/logo-transparent.png?v=1';logoImage.width=230;logoImage.height=72}
+document.head?.insertAdjacentHTML?.('beforeend','<link rel="stylesheet" href="refinement.css?v=20260914-1"><link rel="stylesheet" href="overlay-fixes.css?v=20260917-11">');
 const $=s=>document.querySelector(s),app=$('#app');
 const requestedSample=typeof location!=='undefined'?new URLSearchParams(location.search).get('sample'):null;
 const state={page:'home',companion:null,beforeAssessment:null,afterAssessment:null,goal:'relax',instrument:'chinese',tone:'jue',selectedPlan:null,recommendedPlan:null,recommendationSampleId:/^U00[1-9]$|^U010$/.test(requestedSample||'')?requestedSample:'U002',overrideReason:'',duration:120,immersion:{phase:'C',progress:0}};
