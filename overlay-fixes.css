@@ -230,3 +230,92 @@ body.tech:has(.report) .eeg-grid #companion .avatar-stage{position:relative;z-in
 body.tech:has(.report) .eeg-grid #companion>span{position:relative;z-index:1;color:#b7cbc8!important}
 @media(max-width:1100px){.report-dashboard{grid-template-columns:180px 1fr}.report-analysis{display:none}.report-data .signal-grid,.report-data .eeg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:760px){body.tech:has(.report){overflow:auto}.report-dashboard{display:block;height:auto}.report-dashboard>.report-overview,.report-analysis{margin-bottom:12px}.report-analysis{display:block}.report-data{overflow:visible}.report-data .signal-grid,.report-data .eeg-grid{height:auto;grid-template-columns:1fr 1fr}}
+
+/* Report v2: isolate the new dashboard from the legacy report grid coordinates. */
+@media(min-width:1101px){
+ body.tech .page.report{
+  display:flex!important;
+  flex-direction:column!important;
+  width:100%!important;
+  max-width:none!important;
+  height:100%!important;
+  min-height:0!important;
+  grid-template-columns:none!important;
+  grid-template-rows:none!important;
+ }
+ body.tech .page.report>.report-dashboard{
+  display:grid!important;
+  flex:1 1 auto!important;
+  grid-template-columns:minmax(230px,16%) minmax(0,1fr) minmax(250px,18%)!important;
+  grid-template-rows:minmax(0,1fr)!important;
+  align-items:stretch!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+ }
+ body.tech .page.report>.report-dashboard>.report-overview{
+  grid-column:1!important;
+  grid-row:1!important;
+  width:auto!important;
+  height:auto!important;
+ }
+ body.tech .page.report>.report-dashboard>.report-data{
+  display:grid!important;
+  grid-column:2!important;
+  grid-row:1!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  grid-template-rows:20px minmax(0,.88fr) 20px minmax(0,1.12fr)!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  overflow:hidden!important;
+ }
+ body.tech .page.report>.report-dashboard>.report-analysis{
+  display:block!important;
+  grid-column:3!important;
+  grid-row:1!important;
+  width:auto!important;
+  height:auto!important;
+ }
+ body.tech .page.report .report-data>.report-section-title,
+ body.tech .page.report .report-data>.signal-grid,
+ body.tech .page.report .report-data>.eeg-grid{
+  grid-column:1!important;
+  position:relative!important;
+  width:100%!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  margin:0!important;
+ }
+ body.tech .page.report .report-data>.report-section-title:first-child{grid-row:1!important}
+ body.tech .page.report .report-data>.signal-grid{grid-row:2!important}
+ body.tech .page.report .report-data>.signal-grid+.report-section-title{grid-row:3!important;margin:0!important}
+ body.tech .page.report .report-data>.eeg-grid{grid-row:4!important}
+ body.tech .page.report .signal-grid,
+ body.tech .page.report .eeg-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  left:auto!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+ }
+ body.tech .page.report .signal-grid{grid-template-rows:minmax(0,1fr)!important}
+ body.tech .page.report .eeg-grid{grid-template-rows:repeat(2,minmax(0,1fr))!important}
+ body.tech .page.report .signal-grid>.panel,
+ body.tech .page.report .eeg-grid>.panel,
+ body.tech .page.report .eeg-grid>#companion{
+  grid-column:auto!important;
+  grid-row:auto!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  margin:0!important;
+ }
+}
+
