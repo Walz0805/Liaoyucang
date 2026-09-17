@@ -5,7 +5,7 @@ import {reportPanels,reportInsight} from './report-panels.js?v=20260916-1';
 import {getAssessment} from './assessment-service.js';
 import {assessmentAdapter,safetyCheck,recommendationEngine,overrideRecommendation} from './assessment.js';
 import {getDemoRecommendation} from './recommendation-service.js?v=20260916-1';
-document.head?.insertAdjacentHTML?.('beforeend','<link rel="stylesheet" href="refinement.css?v=20260914-1"><link rel="stylesheet" href="overlay-fixes.css?v=20260917-3">');
+document.head?.insertAdjacentHTML?.('beforeend','<link rel="stylesheet" href="refinement.css?v=20260914-1"><link rel="stylesheet" href="overlay-fixes.css?v=20260917-4">');
 const logoImage=document.querySelector?.('header .logo img');if(logoImage){logoImage.src='assets/images/logo-transparent.png?v=1';logoImage.width=230;logoImage.height=72}
 const $=s=>document.querySelector(s),app=$('#app');
 const requestedSample=typeof location!=='undefined'?new URLSearchParams(location.search).get('sample'):null;
@@ -33,7 +33,7 @@ function render(){
  const narrationSlot=$('#narration-slot');$('header').appendChild?.(narrationSlot);
  renderPage();
  if(state.page==='report'){const stai=$('.stai-report'),overview=$('.report-overview');overview?.appendChild?.(stai)}
- const destination=state.page==='report'?$('.eeg-grid'):state.page==='home'?$('.home-v2'):state.page==='immersion'?$('.immersion'):null;
+ const destination=state.page==='report'?$('.report-analysis'):state.page==='home'?$('.home-v2'):state.page==='immersion'?$('.immersion'):null;
  destination?.appendChild?.(companion);
  if(state.page==='immersion')destination?.appendChild?.(narrationSlot);
 }
