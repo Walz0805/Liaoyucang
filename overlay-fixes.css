@@ -99,8 +99,10 @@ body:has(.guide-intro) footer,body:has(.guide-select) footer{display:none}
 body:has(.guide-intro) #companion,body:has(.guide-select) #companion{display:none!important}
 .guide-intro{position:fixed;inset:0;z-index:10;width:100%;height:100vh;overflow:hidden;background:#061820;color:#f7f2e7}
 .guide-intro video{position:absolute;inset:0;width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center;background:#061820}
+.guide-intro .guide-intro-bg{z-index:0;max-width:none;object-fit:cover;filter:blur(26px) brightness(.48) saturate(.75);transform:scale(1.08);background:#061820}
+.guide-intro .guide-intro-main{z-index:1;background:transparent}
 .immersion .imm-video{inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:#061820!important}
-.guide-intro-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(4,20,27,.48) 0%,rgba(4,20,27,.12) 38%,transparent 70%),linear-gradient(0deg,rgba(4,20,27,.38),transparent 36%)}
+.guide-intro-shade{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(4,20,27,.48) 0%,rgba(4,20,27,.12) 38%,transparent 70%),linear-gradient(0deg,rgba(4,20,27,.38),transparent 36%)}
 .guide-intro-copy{position:absolute;left:clamp(36px,7vw,132px);bottom:clamp(70px,12vh,150px);z-index:2;text-shadow:0 2px 25px rgba(0,0,0,.45)}
 .guide-intro-copy>span,.guide-select-head>span{font:500 11px/1.2 system-ui;letter-spacing:.28em;color:#d7b66d}
 .guide-intro-copy h2{margin:14px 0 8px;font:400 clamp(42px,6vw,86px)/1.05 serif;letter-spacing:.08em}
@@ -191,12 +193,20 @@ body.welcome>header{margin:0!important;padding:0 5%;width:100%;background:#101e2
 
 /* Sound-mode preview uses quiet imagery instead of an empty color field. */
 .preview-sound{position:relative;isolation:isolate;overflow:hidden;background-position:center!important;background-size:cover!important;transition:background-image .35s ease}
-.preview-sound.sound-chinese{background-image:url('assets/images/forest-v2.png')!important}
-.preview-sound.sound-western{background-image:url('assets/images/aurora-v2.png')!important}
+.preview-sound.sound-chinese{background-image:url('assets/images/traditional-instruments-v1.png')!important}
+.preview-sound.sound-western{background-image:url('assets/images/western-instruments-v1.png')!important}
 .preview-sound:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,28,36,.94),rgba(7,28,36,.68) 48%,rgba(7,28,36,.16)),linear-gradient(0deg,rgba(7,28,36,.72),transparent 58%)}
 .preview-sound:after{content:'';position:absolute;right:7%;top:10%;z-index:-1;width:34%;aspect-ratio:1;border:1px solid rgba(224,199,137,.28);border-radius:50%;box-shadow:0 0 0 22px rgba(224,199,137,.035),0 0 0 52px rgba(224,199,137,.02)}
 .preview-sound>span,.preview-sound>h3,.preview-sound>button{position:relative;z-index:1;text-shadow:0 2px 20px rgba(0,0,0,.65)}
 .preview-sound>button{background:rgba(8,32,41,.64)!important;border-color:rgba(202,220,216,.36)!important;color:#edf3ed!important;backdrop-filter:blur(10px)}
+.scene-cover.mode-chinese{background-image:url('assets/images/five-elements-atlas-v1.png')!important;background-size:500% auto!important;background-repeat:no-repeat!important;background-color:#0b202a!important}
+.scene-cover.mode-chinese>.landscape{opacity:0!important}
+.scene-cover.mode-chinese.tone-gong{background-position:0 center!important}
+.scene-cover.mode-chinese.tone-shang{background-position:25% center!important}
+.scene-cover.mode-chinese.tone-jue{background-position:50% center!important}
+.scene-cover.mode-chinese.tone-zhi{background-position:75% center!important}
+.scene-cover.mode-chinese.tone-yu{background-position:100% center!important}
+.scene-cover.mode-chinese:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,20,27,.72),transparent 55%);pointer-events:none}
 
 /* Three-zone report: body status, objective signals, concise interpretation. */
 body.tech:has(.report),body.tech:has(.report) .sky{background:#0b202a!important;color:#edf3f1}
