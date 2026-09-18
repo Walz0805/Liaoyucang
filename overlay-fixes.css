@@ -619,3 +619,45 @@ body:not(.welcome)>header,
 body:not(.welcome)>footer{display:none!important}
 body:not(.welcome):not(.immersive)>main{height:100svh!important;min-height:100svh!important}
 body.immersive .narration-control{display:none!important}
+
+/* Report v4: three clear zones — live body, objective dashboard, written analysis. */
+@media(min-width:1101px){
+ body.tech .page.report>.report-dashboard{
+  grid-template-columns:clamp(245px,15vw,310px) minmax(610px,1fr) clamp(330px,21vw,410px)!important;
+  height:min(calc(100svh - 176px),760px)!important;
+  max-height:760px!important;
+  gap:12px!important;
+ }
+ body.tech .page.report .report-analysis>#companion{display:none!important}
+}
+.report-status-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 9px;padding-bottom:10px;border-bottom:1px solid #8fb8bd20}
+.report-status-head span{width:100%;color:#d4b96f;font:600 8px/1 system-ui;letter-spacing:.2em}
+.report-status-head b{color:#e2ece9;font:500 13px/1.2 system-ui}
+.report-status-head i{margin-left:auto;color:#6f8f96;font:400 8px/1.2 system-ui}
+body.tech .page.report .report-overview{padding:17px 16px!important;gap:10px!important;background:linear-gradient(160deg,#143743,#0c2631)!important}
+body.tech .page.report .report-overview .report-body{position:relative;flex:1 1 auto!important;min-height:0!important;border-radius:12px!important;overflow:hidden!important;background:radial-gradient(circle at 50% 42%,#3bb9b42d,transparent 45%),linear-gradient(180deg,#0b2732,#0b2029)!important}
+body.tech .page.report .report-overview .report-body:before{content:'';position:absolute;z-index:3;left:7%;right:7%;top:8%;height:1px;background:linear-gradient(90deg,transparent,#76e5d6,transparent);box-shadow:0 0 14px #55d6c7;animation:body-scan-line 4.5s ease-in-out infinite}
+body.tech .page.report .report-overview .report-body:after{content:'';position:absolute;z-index:1;inset:12% 22%;border:1px solid #67c9bf25;border-radius:50%;box-shadow:0 0 34px #4dc7bd12;animation:body-pulse 3.2s ease-in-out infinite}
+body.tech .page.report .report-overview .reference-body>img{position:relative!important;z-index:2;filter:drop-shadow(0 0 12px #5acbc577) brightness(1.08)!important;animation:body-breathe 4s ease-in-out infinite}
+.body-vital-points{position:absolute;z-index:4;inset:0;pointer-events:none}
+.body-vital-points span{position:absolute;display:flex;flex-direction:column;gap:2px;padding:5px 7px;border:1px solid #67bdb73b;border-radius:7px;background:#09212bd9;color:#7f9da3;font-size:7px;line-height:1}
+.body-vital-points strong{color:#73d6ca;font:500 13px/1.1 Georgia,serif}
+.body-vital-points span:nth-child(1){top:27%;right:5%}.body-vital-points span:nth-child(2){top:47%;left:4%}.body-vital-points span:nth-child(3){bottom:16%;right:5%}
+@keyframes body-scan-line{0%,100%{top:10%;opacity:.25}50%{top:86%;opacity:1}}
+@keyframes body-pulse{50%{transform:scale(1.08);opacity:.45}}
+@keyframes body-breathe{50%{transform:scale(1.018)}}
+body.tech .page.report .report-overview .stai-report{flex:0 0 auto!important;margin-top:2px!important;padding:12px 13px!important}
+body.tech .page.report .report-analysis{padding:18px 20px!important;overflow:auto!important;scrollbar-width:thin;scrollbar-color:#5b898733 transparent;background:linear-gradient(165deg,#153945,#0d2732)!important}
+.report-analysis .analysis-head{padding-bottom:14px;border-bottom:1px solid #91aeb429}
+.report-analysis .analysis-head h3{margin:8px 0 5px!important;font-size:24px!important;line-height:1.25!important}
+.report-analysis .analysis-head p{margin:0!important;color:#86a0a6!important;font-size:9px!important;line-height:1.6!important}
+.report-analysis .analysis-section{padding:14px 0;border-bottom:1px solid #91aeb41e}
+.report-analysis .analysis-section>b{display:block;margin-bottom:7px;color:#d7bd79;font:500 11px/1.2 system-ui;letter-spacing:.08em}
+.report-analysis .analysis-section p{margin:0!important;color:#bfd0d1!important;font-size:11px!important;line-height:1.85!important}
+.report-analysis .analysis-section ul{display:grid;gap:7px;margin:0;padding:0;list-style:none}
+.report-analysis .analysis-section li{display:flex;justify-content:space-between;gap:12px;color:#b8cccd;font-size:10px;line-height:1.4}
+.report-analysis .analysis-section li span{color:#76949a}
+.report-analysis .analysis-section.recommendation{margin-top:0!important;padding:14px!important;border:1px solid #c7aa6242!important;border-radius:8px;background:#c7aa6209}
+.report-analysis>small{margin-top:13px!important;color:#718c92!important;font-size:8px!important;line-height:1.65!important}
+@media(prefers-reduced-motion:reduce){.report-body:before,.report-body:after,.report-body img{animation:none!important}}
+@media(max-width:1100px){.report-status-head{display:none}.body-vital-points{display:none}}
