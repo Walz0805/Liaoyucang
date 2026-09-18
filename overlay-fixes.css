@@ -613,3 +613,9 @@ body.tech .page.report .eeg-grid>.panel:last-child .signal-chart-wrap>.signal-ch
  body.tech .page.report .eeg-grid>.panel:not(:last-child) .chart-x-end{display:none}
 }
 
+
+/* Keep the therapy journey visually quiet: the home page owns the global chrome. */
+body:not(.welcome)>header,
+body:not(.welcome)>footer{display:none!important}
+body:not(.welcome):not(.immersive)>main{height:100svh!important;min-height:100svh!important}
+body.immersive .narration-control{display:none!important}
