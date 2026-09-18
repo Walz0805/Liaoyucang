@@ -661,3 +661,73 @@ body.tech .page.report .report-analysis{padding:18px 20px!important;overflow:aut
 .report-analysis>small{margin-top:13px!important;color:#718c92!important;font-size:8px!important;line-height:1.65!important}
 @media(prefers-reduced-motion:reduce){.report-body:before,.report-body:after,.report-body img{animation:none!important}}
 @media(max-width:1100px){.report-status-head{display:none}.body-vital-points{display:none}}
+
+/* Report v5: use the full viewport, remove body-image edge strips, restore the guide. */
+@media(min-width:1101px){
+ body.tech .page.report{height:calc(100svh - 46px)!important;margin-top:18px!important;margin-bottom:0!important}
+ body.tech .page.report>.report-dashboard{
+  flex:1 1 auto!important;
+  height:auto!important;
+  max-height:none!important;
+  min-height:0!important;
+ }
+ body.tech .page.report>.report-site-footer{
+  flex:0 0 56px!important;
+  min-height:56px!important;
+  margin-top:10px!important;
+  padding-top:8px!important;
+  align-items:center!important;
+ }
+ body.tech .page.report .report-analysis{position:relative!important;padding-bottom:270px!important;overflow:hidden!important}
+ body.tech .page.report .report-analysis>#companion{
+  position:absolute!important;
+  display:flex!important;
+  inset:auto 18px 12px 18px!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  width:auto!important;
+  height:248px!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:14px 0 0!important;
+  border:0!important;
+  border-top:1px solid #91aeb429!important;
+  border-radius:0!important;
+  background:radial-gradient(ellipse at 50% 88%,#64b6ad20,transparent 55%)!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+ }
+ body.tech .page.report .report-analysis>#companion .avatar-stage{
+  flex:0 0 210px!important;
+  width:auto!important;
+  height:210px!important;
+  min-height:0!important;
+  max-height:none!important;
+  margin:0 auto!important;
+ }
+ body.tech .page.report .report-analysis>#companion>span{
+  display:block!important;
+  padding:4px 0 0!important;
+  color:#9ebbb7!important;
+  font-size:8px!important;
+  letter-spacing:.12em!important;
+ }
+ body.tech .page.report .report-overview .report-body .body-scan.reference-body{
+  position:relative!important;
+  left:-9px!important;
+  width:calc(100% + 18px)!important;
+  max-width:none!important;
+  background:#0b2732!important;
+ }
+ body.tech .page.report .report-overview .report-body .reference-body>img{
+  width:100%!important;
+  max-width:none!important;
+ }
+}
+@media(min-width:1101px) and (max-height:820px){
+ body.tech .page.report .report-analysis{padding-bottom:145px!important}
+ body.tech .page.report .report-analysis .analysis-section{padding:10px 0!important}
+ body.tech .page.report .report-analysis>#companion{height:130px!important}
+ body.tech .page.report .report-analysis>#companion .avatar-stage{flex-basis:100px!important;height:100px!important}
+}
