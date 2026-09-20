@@ -1,5 +1,5 @@
 import {playNarration,stopNarration,pauseNarration,setNarrationVolume} from './narration.js?v=20260919-1';
-import {mountAvatar} from './avatar-canvas.js?v=20260916-11';
+import {mountAvatar} from './avatar-canvas.js?v=20260920-1';
 import {standardFlow,getImmersionPhase} from './experience.js';
 import {reportPanels,reportInsight} from './report-panels.js?v=20260918-5';
 import {getAssessment} from './assessment-service.js';
@@ -10,6 +10,7 @@ const $=s=>document.querySelector(s),app=$('#app');
 const requestedSample=typeof location!=='undefined'?new URLSearchParams(location.search).get('sample'):null;
 const state={page:'home',companion:null,beforeAssessment:null,afterAssessment:null,goal:'relax',instrument:'chinese',tone:'jue',selectedPlan:null,recommendedPlan:null,recommendationSampleId:/^U00[1-9]$|^U010$/.test(requestedSample||'')?requestedSample:'U002',overrideReason:'',duration:120,soundscape:'rain',immersion:{phase:'C',progress:0}};
 const companions={xiaoxing:{name:'小星',role:'国风青年 · 乐师',image:'assets/avatar/xiaoxing-demo-base.png',atlas:'assets/avatar/xiaoxing-no-blink-fast-v6.png',width:410,height:627,mouth:[190,66,36,25],reportImage:'assets/avatar/xiaoxing-report-half.png',reportAtlas:'assets/avatar/xiaoxing-report-half-atlas.png',reportWidth:1086,reportHeight:1448,reportMouth:[568,300,78,64]},xiaoxuan:{name:'小璇',role:'苗族少女 · 乐师',image:'assets/avatar/xiaoxuan-demo-base.png',atlas:'assets/avatar/xiaoxuan-no-blink-fast-v6.png',width:380,height:627,mouth:[172,98,38,30],reportImage:'assets/avatar/xiaoxuan-report-half.png',reportAtlas:'assets/avatar/xiaoxuan-report-half-atlas.png',reportWidth:1145,reportHeight:1374,reportMouth:[548,466,88,70]}};
+Object.values(companions).forEach(({reportImage,reportAtlas})=>[reportImage,reportAtlas].forEach(src=>{const image=new Image();image.src=src}));
 const SAMPLE_SECONDS=30;
 const soundscapes={rain:'听雨',waves:'观潮',fire:'围炉',stream:'听泉'};
 const goals={relax:'减压',sleep:'助眠',focus:'专注',energy:'提振'},scenes={ocean:'晨雾海岸',forest:'森林微光',aurora:'极光原野'},music={'piano':'西洋乐器','five-tone':'中国乐器 · 五音'},tones={gong:'宫',shang:'商',jue:'角 · 木',zhi:'徵',yu:'羽'};

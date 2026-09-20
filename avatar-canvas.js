@@ -8,6 +8,10 @@ export function mountAvatar(canvas,guide){
  if(!canvas||!guide?.atlas||!guide?.mouth)return;
  const token=(sessions.get(canvas)?.token||0)+1;
  sessions.set(canvas,{token});
+ // Never leave the previous guide/frame visible while a new atlas is decoding.
+ canvas.classList.remove('ready');
+ canvas.width=guide.width;
+ canvas.height=guide.height;
  const image=new Image();
  image.decoding='async';
  image.onload=()=>{
