@@ -1,4 +1,4 @@
-import {playNarration,stopNarration,pauseNarration,setNarrationVolume} from './narration.js?v=20260919-1';
+import {playNarration,stopNarration,pauseNarration,setNarrationVolume} from './narration.js?v=20260922-1';
 import {mountAvatar} from './avatar-canvas.js?v=20260920-1';
 import {standardFlow,getImmersionPhase} from './experience.js';
 import {reportPanels,reportInsight} from './report-panels.js?v=20260918-5';

@@ -1,5 +1,5 @@
 import {followVoice,stopMouth} from './lipsync.js?v=20260916-4';
-export const narrationFiles={consent:'consent',scan:'baseline',prepare:'prepare',select:'select','select-goal':'select',after:'after',report:'report',C01:'guide',F01:'wake'};
+export const narrationFiles={consent:'consent',scan:'liangbiao',prepare:'prepare',select:'select','select-goal':'select',after:'liangbiao',report:'report',C01:'guide',F01:'wake'};
 let audio=null,button=null,generation=0,volume=0.8;
 function control(){
  if(button)return button;
