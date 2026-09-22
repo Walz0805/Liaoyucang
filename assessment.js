@@ -13,7 +13,7 @@ export function platformAssessmentAdapter(raw,stage='before'){
  const betaLow=values('Beta','x'),betaHigh=values('Beta','z');
  const gammaLow=values('Gamma','x'),gammaHigh=values('Gamma','y');
  const expressions=(row('表情数据').dateValues||[]).flatMap(x=>[x.x,x.y]).filter(Boolean);
- const emotionNames={happy:['愉悦','开心','高兴'],neutral:['中性'],sadness:['悲伤','低落'],fear:['恐惧'],surprise:['惊讶'],disgust:['厌恶']};
+ const emotionNames={happy:['愉悦','开心','高兴'],neutral:['中性'],sadness:['悲伤','低落'],fear:['恐惧'],surprise:['惊讶'],disgust:['厌恶'],anger:['愤怒','生气']};
  const emotion=Object.fromEntries(Object.entries(emotionNames).map(([k,names])=>[k,expressions.length?expressions.filter(x=>names.includes(x)).length/expressions.length:null]));
  emotion.polarity=(emotion.happy??0)-(emotion.sadness??0)-(emotion.fear??0);
  return {stage,basic:{heartRate:value('心率'),respiration:value('呼吸'),temperature:value('体温')},eeg:{delta:value('Delta'),theta:value('Theta'),lowAlpha:average(alphaLow),highAlpha:average(alphaHigh),alpha:average([...alphaLow,...alphaHigh]),beta:average([...betaLow,...betaHigh]),gamma:average([...gammaLow,...gammaHigh])},emotion,stateVector:{},questionnaire:{name:'STAI-S',score:stage==='before'?52:37,totalItems:20},flags:{highRisk:false,fatigue:false},series:{heartRate:values('心率'),respiration:values('呼吸'),temperature:values('体温'),delta:values('Delta'),theta:values('Theta'),lowAlpha:alphaLow,highAlpha:alphaHigh,alpha:sample([...alphaLow,...alphaHigh]),beta:sample([...betaLow,...betaHigh]),gamma:sample([...gammaLow,...gammaHigh])},source:'platform-export'};
