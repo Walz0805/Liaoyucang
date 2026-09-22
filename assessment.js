@@ -24,7 +24,7 @@ export function assessmentAdapter(raw,stage){
  if(Array.isArray(raw.data))return platformAssessmentAdapter(raw,stage);
  const group=o=>Object.fromEntries(Object.entries(o||{}).map(([k,v])=>[k,number(v)]));
  if(typeof raw.flags?.highRisk!=='boolean')throw Error('缺少有效的 highRisk 安全字段，请由工作人员确认');
- return {stage,basic:group(raw.basic),eeg:group(raw.eeg),emotion:group(raw.emotion),stateVector:group(raw.stateVector),questionnaire:{name:'STAI-S',score:number(raw.questionnaire?.score)??(stage==='before'?52:37),totalItems:20},flags:{...raw.flags},series:Object.fromEntries(Object.entries(raw.series||{}).map(([k,v])=>[k,Array.isArray(v)?finite(v):[]]))};
+ return {stage,basic:group(raw.basic),eeg:group(raw.eeg),emotion:group(raw.emotion),stateVector:group(raw.stateVector),questionnaire:{name:'STAI-S',score:number(raw.questionnaire?.score)??(stage==='before'?52:37),totalItems:20,responses:Array.isArray(raw.questionnaire?.responses)?raw.questionnaire.responses.map(number):[],band:raw.questionnaire?.band||null,completedAt:raw.questionnaire?.completedAt||null,scoringVersion:raw.questionnaire?.scoringVersion||'stai-s-v1'},flags:{...raw.flags},series:Object.fromEntries(Object.entries(raw.series||{}).map(([k,v])=>[k,Array.isArray(v)?finite(v):[]]))};
 }
 export function safetyCheck(a){return a?.flags.highRisk===false}
 export function buildRecommendationPrompt({goal,physiologySummary,scene,tone}){return `目标=${goal}，生理摘要=${physiologySummary}，命中场景=${scene}，五音=${tone}。输出一句不超过25字的推荐理由，口语、非医疗、不报数字。`}
