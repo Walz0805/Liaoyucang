@@ -936,3 +936,6 @@ body.tech .page.report-v6 .analyst-card-v6>#companion .avatar-canvas{object-posi
  .body-callout{width:68px!important}
  .body-callout:before{width:26px!important}
 }
+
+/* Solid, low-contrast body metric connectors. */
+.body-callout:before{border-top-style:solid!important;border-top-color:#7ca5ae55!important}
