@@ -915,3 +915,24 @@ body.tech .page.report-v6 .analyst-card-v6>#companion .avatar-canvas{object-posi
  .body-v6 .reference-body>img{width:52%!important}
  body.tech .page.report-v6 .analyst-card-v6>#companion .avatar-stage{flex-basis:220px!important;width:220px!important}
 }
+
+/* Body status card: keep the panel size, but fit and annotate the figure cleanly. */
+@media(min-width:1101px){
+ .body-v6{isolation:isolate}
+ .body-v6:before{content:'';position:absolute;z-index:0;left:50%;top:4%;bottom:3%;width:54%;transform:translateX(-50%);border-left:1px solid #79b6cb12;border-right:1px solid #79b6cb12;background:linear-gradient(90deg,transparent,#3c8eb510 50%,transparent)}
+ .body-v6 .body-scan.reference-body{position:absolute!important;inset:0!important;overflow:visible!important}
+ .body-v6 .reference-body>img{position:absolute!important;inset:0!important;margin:auto!important;width:44%!important;height:88%!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:center center!important;transform:none!important}
+ .body-v6 .body-scan:after{left:25%!important;right:25%!important;bottom:4%!important}
+ .body-callout{width:72px!important}
+ .body-callout:before{width:34px!important}
+ .body-callout.focus{left:2%!important;top:7%!important}
+ .body-callout.relax{left:2%!important;bottom:7%!important}
+ .body-callout.heart{right:1%!important;top:25%!important}
+ .body-callout.breath{right:1%!important;top:48%!important}
+ .body-callout.temp{right:1%!important;bottom:8%!important}
+}
+@media(min-width:1101px) and (max-height:950px){
+ .body-v6 .reference-body>img{width:42%!important;height:86%!important}
+ .body-callout{width:68px!important}
+ .body-callout:before{width:26px!important}
+}
