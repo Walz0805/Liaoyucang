@@ -944,3 +944,7 @@ body.tech .page.report-v6 .analyst-card-v6>#companion .avatar-canvas{object-posi
 .body-callout:before{display:none!important}
 .body-callout{padding-left:10px!important;border-color:#72a5b63d!important;background:linear-gradient(145deg,#102b39f2,#0a202df2)!important;box-shadow:inset 3px 0 #65a9b6,0 8px 20px #02091240!important}
 .body-callout.focus,.body-callout.relax{border-color:#d8bb7552!important;box-shadow:inset 3px 0 #d9bc76,0 8px 20px #02091240!important}
+
+/* STAI navigation stays interactive while its optional guide narration is playing. */
+body.awaiting-narration .stai-navigation .primary:not(:disabled){opacity:1!important;cursor:pointer!important;filter:none!important}
+body.awaiting-narration .stai-navigation .primary:after{content:none!important}
