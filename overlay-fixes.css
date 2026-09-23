@@ -939,3 +939,8 @@ body.tech .page.report-v6 .analyst-card-v6>#companion .avatar-canvas{object-posi
 
 /* Solid, low-contrast body metric connectors. */
 .body-callout:before{border-top-style:solid!important;border-top-color:#7ca5ae55!important}
+
+/* Body metrics are independent status badges; no anatomical connector implication. */
+.body-callout:before{display:none!important}
+.body-callout{padding-left:10px!important;border-color:#72a5b63d!important;background:linear-gradient(145deg,#102b39f2,#0a202df2)!important;box-shadow:inset 3px 0 #65a9b6,0 8px 20px #02091240!important}
+.body-callout.focus,.body-callout.relax{border-color:#d8bb7552!important;box-shadow:inset 3px 0 #d9bc76,0 8px 20px #02091240!important}
