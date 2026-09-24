@@ -61,6 +61,7 @@ def user_profile(result: Dict[str, Any], stage: str) -> Dict[str, Any]:
     risk = risk_profile(result, stage)
     state = result.get("after" if stage in {"after", "after_immersion"} else "before", {})
     components = state.get("state_components", {})
+    expression = state.get("expression") or {}
     physiology = value(components, "physiology", default=50.0)
     mood = components.get("mood")
     mood = float(mood) if isinstance(mood, (int, float)) else None
@@ -72,12 +73,13 @@ def user_profile(result: Dict[str, Any], stage: str) -> Dict[str, Any]:
     if mood is not None and mood < 40: relaxation_need = min(1.0, relaxation_need + 0.15)
     function_need = 0.20 if risk_level in {"critical", "high"} else 0.40 if relaxation_need >= 0.55 else 0.55
     return {
-        "risk": risk, "risk_level": risk_level, "dim1_valence": ((mood or 50.0) / 50.0 - 1.0),
+        "risk": risk, "risk_level": risk_level, "dim1_valence": (((mood if mood is not None else 50.0) / 50.0) - 1.0),
         "dim2_relaxation_need": relaxation_need, "dim3_arousal_limit": arousal_limit,
         "dim4_safety_need": safe_need, "dim5_visual_rhythm_limit": arousal_limit,
         "dim6_function_need": function_need, "source_metrics": state.get("used_metrics", []),
         "missing_metrics": state.get("missing_metrics", []),
-        "expression_used": False if stage in {"C", "D", "E", "immersion", "after_immersion"} else True,
+        "expression_used": bool(expression.get("used_in_mood")),
+        "expression_score": expression.get("score"),
     }
 
 
@@ -161,12 +163,13 @@ def recommend(result: Dict[str, Any], videos: List[Dict[str, Any]], history: Dic
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run recommendation algorithm v2")
-    parser.add_argument("--scores", default="..\\scoring_v2\\scoring_v2_results_befor.json")
-    parser.add_argument("--videos", default="video_tags_natural_scenery_v2.json")
+    script_dir = Path(__file__).resolve().parent
+    parser.add_argument("--scores", default=str(script_dir.parent / "scoring" / "scoring_v2_results_befor_50.json"))
+    parser.add_argument("--videos", default=str(script_dir / "video_tags_natural_scenery_v2.json"))
     parser.add_argument("--history", default="")
     parser.add_argument("--stage", default="before", choices=["before", "after", "C", "D", "E", "immersion", "after_immersion"])
     parser.add_argument("--top-k", type=int, default=5)
-    parser.add_argument("--output", default="recommendation_v2_results.json")
+    parser.add_argument("--output", default=str(script_dir / "recommendation_v2_results.json"))
     args = parser.parse_args()
     scores, video_data = load_json(args.scores), load_json(args.videos)
     history = load_json(args.history) if args.history else {}

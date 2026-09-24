@@ -22,9 +22,39 @@ CONFIG: Dict[str, Any] = {
         "ibi": {"labels": ["IBI", "RR", "RR间期", "心搏间期"], "date_types": [6, 7], "valid_range": [300, 2000]},
     },
     "quality": {"min_valid_ratio": 0.80, "min_duration_sec": 30, "flat_repeat_ratio": 0.90, "min_hrv_intervals": 30},
+    "expression": {
+        "min_samples": 10,
+        "min_valid_ratio": 0.80,
+        "min_duration_sec": 10,
+        "high_repeat_ratio": 0.90,
+        "device_value_range": [-4, 2],
+        "subjective_weight": 0.70,
+        "expression_weight": 0.30,
+    },
     "hrv_lnrmssd_reference": [2.5, 4.5],
+    "derived_metrics": {
+        "relaxation_weights": {"hrv": 0.35, "eda": 0.25, "respiration": 0.20, "alpha": 0.20},
+        "attention_weights": {"eye_stability": 0.35, "motion_stability": 0.25, "beta_theta": 0.40},
+        "emotion_weights": {"expression": 0.50, "eda": 0.25, "heart_rate": 0.25},
+        "comprehensive_weights": {"relaxation": 0.45, "attention": 0.25, "emotion_peace": 0.30},
+        "eda_reference": [0.0, 100.0],
+        "alpha_reference": [0.0, 100.0],
+        "beta_theta_reference": [0.25, 3.0],
+        "motion_reference": [0.0, 5.0],
+        "gaze_reference": [0.0, 1.0],
+    },
     "effect_thresholds": {"marked_improvement": 15, "mild_improvement": 5, "mild_decline": -5, "marked_decline": -15},
     "immersion_stages": ["C", "D", "E", "immersion", "after_immersion"],
+}
+
+EXPRESSION_CODES: Dict[str, Tuple[str, float, str]] = {
+    "高兴": ("积极", 2.0, "happy"),
+    "惊讶": ("积极", 1.0, "surprise"),
+    "中性": ("中性", 0.0, "neutral"),
+    "悲伤": ("消极", -1.0, "sadness"),
+    "厌恶": ("消极", -2.0, "disgust"),
+    "恐惧": ("消极", -3.0, "fear"),
+    "愤怒": ("消极", -4.0, "anger"),
 }
 
 NEGATIVE_REACTIONS = {
@@ -179,6 +209,207 @@ def physiology_score(physiology: Dict[str, Any]) -> Dict[str, Any]:
     return {"score": round3(score), "components": components, "used_metrics": [key for key, value in scores.items() if value is not None], "risk_flags": sorted(set(flags))}
 
 
+def _derived_mean(channel: Optional[Dict[str, Any]], fields: Sequence[str] = ("value",)) -> Optional[float]:
+    values = channel_values(channel, fields)
+    return sum(values) / len(values) if values else None
+
+
+def _derived_vector_values(channel: Optional[Dict[str, Any]], fields: Sequence[str]) -> List[float]:
+    if not channel:
+        return []
+    values: List[float] = []
+    for point in channel.get("dateValues", []):
+        point_values = [finite(point.get(field)) for field in fields]
+        point_values = [value for value in point_values if value is not None]
+        if point_values:
+            values.append(sum(point_values) / len(point_values))
+    return values
+
+
+def _derived_weighted(scores: Dict[str, Optional[float]], weights: Dict[str, float]) -> Optional[float]:
+    return round3(weighted_mean(scores, weights))
+
+
+def _derived_component_result(scores: Dict[str, Optional[float]], weights: Dict[str, float]) -> Dict[str, Any]:
+    used = [key for key, value in scores.items() if value is not None]
+    missing = [key for key, value in scores.items() if value is None]
+    effective = {key: round3(weights[key] / sum(weights[item] for item in used),) for key in used} if used else {}
+    return {
+        "score": _derived_weighted(scores, weights),
+        "components": {key: round3(value) for key, value in scores.items()},
+        "weights": effective,
+        "used_metrics": used,
+        "missing_metrics": missing,
+        "comparable_key": used,
+    }
+
+
+def derived_relaxation_score(physiology: Dict[str, Any], hrv: Dict[str, Any]) -> Dict[str, Any]:
+    config = CONFIG["derived_metrics"]
+    scores: Dict[str, Optional[float]] = {"hrv": hrv.get("score")}
+    eda_spec = CONFIG["physiology_channels"]["eda"]
+    respiration_spec = CONFIG["physiology_channels"]["respiration"]
+    eda_stats = channel_statistics(find_channel(physiology, eda_spec), eda_spec)
+    respiration_stats = channel_statistics(find_channel(physiology, respiration_spec), respiration_spec)
+    eda_mean = eda_stats.get("mean")
+    scores["eda"] = None if eda_mean is None or eda_stats["valid_ratio"] < CONFIG["quality"]["min_valid_ratio"] else max(0.0, min(100.0, (100.0 - eda_mean) / 100.0 * 100.0))
+    respiration_mean = respiration_stats.get("mean")
+    scores["respiration"] = interval_score(respiration_mean, respiration_spec["target"], respiration_spec["tolerance"])
+    alpha = _derived_mean(find_channel(physiology, {"labels": ["Alpha"], "date_types": [23], "valid_range": [0, 100]}), ("x", "y", "z", "value"))
+    scores["alpha"] = None if alpha is None else max(0.0, min(100.0, alpha))
+    result = _derived_component_result(scores, config["relaxation_weights"])
+    result["hrv_unavailable"] = hrv.get("score") is None
+    return result
+
+
+def derived_attention_score(physiology: Dict[str, Any]) -> Dict[str, Any]:
+    config = CONFIG["derived_metrics"]
+    eye = find_channel(physiology, {"labels": ["眼动数据", "眼动"], "date_types": [4]})
+    eye_points = []
+    if eye:
+        for point in eye.get("dateValues", []):
+            x, y = finite(point.get("x")), finite(point.get("y"))
+            if x is not None and y is not None:
+                eye_points.append((x, y))
+    eye_dispersion = None
+    if len(eye_points) >= 2:
+        mean_x = sum(point[0] for point in eye_points) / len(eye_points)
+        mean_y = sum(point[1] for point in eye_points) / len(eye_points)
+        eye_dispersion = math.sqrt(sum((x - mean_x) ** 2 + (y - mean_y) ** 2 for x, y in eye_points) / len(eye_points))
+    eye_score = None if eye_dispersion is None else max(0.0, min(100.0, (config["gaze_reference"][1] - eye_dispersion) / (config["gaze_reference"][1] - config["gaze_reference"][0]) * 100.0))
+
+    motion_values = []
+    for date_type, labels in ((11, ["加速度"]), (12, ["角速度"])):
+        channel = find_channel(physiology, {"labels": labels, "date_types": [date_type]})
+        if channel:
+            for point in channel.get("dateValues", []):
+                values = [finite(point.get(axis)) for axis in ("x", "y", "z")]
+                values = [value for value in values if value is not None]
+                if values:
+                    motion_values.append(math.sqrt(sum(value * value for value in values)))
+    motion_mean = sum(motion_values) / len(motion_values) if motion_values else None
+    motion_score = None if motion_mean is None else max(0.0, min(100.0, (config["motion_reference"][1] - motion_mean) / (config["motion_reference"][1] - config["motion_reference"][0]) * 100.0))
+
+    beta = _derived_mean(find_channel(physiology, {"labels": ["Beta"], "date_types": [24], "valid_range": [0, 100]}), ("x", "y", "z", "value"))
+    theta = _derived_mean(find_channel(physiology, {"labels": ["Theta"], "date_types": [22], "valid_range": [0, 100]}), ("value", "x", "y", "z"))
+    ratio = None if beta is None or theta is None or theta <= 0 else beta / theta
+    beta_theta_score = None if ratio is None else max(0.0, min(100.0, (ratio - config["beta_theta_reference"][0]) / (config["beta_theta_reference"][1] - config["beta_theta_reference"][0]) * 100.0))
+    result = _derived_component_result({"eye_stability": eye_score, "motion_stability": motion_score, "beta_theta": beta_theta_score}, config["attention_weights"])
+    result["raw"] = {"gaze_dispersion": round3(eye_dispersion), "motion_mean": round3(motion_mean), "beta_theta_ratio": round3(ratio)}
+    return result
+
+
+def derived_emotion_peace_score(physiology: Dict[str, Any], expression: Dict[str, Any]) -> Dict[str, Any]:
+    config = CONFIG["derived_metrics"]
+    heart_spec = CONFIG["physiology_channels"]["heart_rate"]
+    eda_spec = CONFIG["physiology_channels"]["eda"]
+    heart_stats = channel_statistics(find_channel(physiology, heart_spec), heart_spec)
+    eda_stats = channel_statistics(find_channel(physiology, eda_spec), eda_spec)
+    heart_score = interval_score(heart_stats.get("mean"), heart_spec["target"], heart_spec["tolerance"])
+    eda_score = None if eda_stats.get("mean") is None else max(0.0, min(100.0, 100.0 - eda_stats["mean"]))
+    result = _derived_component_result({"expression": expression.get("score"), "eda": eda_score, "heart_rate": heart_score}, config["emotion_weights"])
+    result["raw"] = {"heart_rate_mean": heart_stats.get("mean"), "eda_mean": eda_stats.get("mean")}
+    return result
+
+
+def derived_metrics(physiology: Dict[str, Any], hrv: Dict[str, Any], expression: Dict[str, Any]) -> Dict[str, Any]:
+    relaxation = derived_relaxation_score(physiology, hrv)
+    attention = derived_attention_score(physiology)
+    emotion = derived_emotion_peace_score(physiology, expression)
+    comprehensive = _derived_component_result(
+        {"relaxation": relaxation["score"], "attention": attention["score"], "emotion_peace": emotion["score"]},
+        CONFIG["derived_metrics"]["comprehensive_weights"],
+    )
+    return {"relaxation": relaxation, "attention": attention, "emotion_peace": emotion, "comprehensive_relaxation": comprehensive}
+
+
+def expression_score(physiology: Dict[str, Any], enabled: bool = True) -> Dict[str, Any]:
+    channel = next(
+        (item for item in channel_map(physiology) if item.get("dateType") == 5 or item.get("label") == "表情数据"),
+        None,
+    )
+    points = channel.get("dateValues", []) if isinstance(channel, dict) and isinstance(channel.get("dateValues"), list) else []
+    raw_count = len(points)
+    valid: List[Tuple[Dict[str, Any], str, float, str]] = []
+    unknown_labels = set()
+    inconsistent_count = 0
+    for point in points:
+        label = str(point.get("y") or "").strip()
+        expected = EXPRESSION_CODES.get(label)
+        device_value = finite(point.get("value"))
+        direction = str(point.get("x") or "").strip()
+        if expected is None:
+            if label: unknown_labels.add(label)
+            inconsistent_count += 1
+            continue
+        expected_direction, expected_value, canonical = expected
+        if direction != expected_direction or device_value != expected_value or parse_time(point.get("time")) is None:
+            inconsistent_count += 1
+            continue
+        valid.append((point, label, expected_value, canonical))
+
+    valid_count = len(valid)
+    valid_ratio = valid_count / raw_count if raw_count else 0.0
+    valid_points = [item[0] for item in valid]
+    duration = duration_seconds(valid_points)
+    labels = [item[1] for item in valid]
+    repeat = sum(left == right for left, right in zip(labels, labels[1:])) / (valid_count - 1) if valid_count > 1 else None
+    counts = {canonical: sum(item[3] == canonical for item in valid) for _, _, canonical in EXPRESSION_CODES.values()}
+    distribution = {key: round3(count / valid_count) for key, count in counts.items()} if valid_count else {key: 0.0 for key in counts}
+    dominant = max(counts, key=counts.get) if valid_count else None
+    mean_value = sum(item[2] for item in valid) / valid_count if valid_count else None
+    low, high = CONFIG["expression"]["device_value_range"]
+    score = None if mean_value is None else max(0.0, min(100.0, (mean_value - low) / (high - low) * 100.0))
+
+    reasons: List[str] = []
+    if not enabled:
+        reasons.append("immersion_stage")
+    if not channel:
+        reasons.append("missing_channel")
+    elif raw_count < CONFIG["expression"]["min_samples"] or valid_count < CONFIG["expression"]["min_samples"]:
+        reasons.append("insufficient_samples")
+    if raw_count and valid_ratio < CONFIG["expression"]["min_valid_ratio"]:
+        reasons.append("low_valid_ratio")
+    if channel and (duration is None or duration < CONFIG["expression"]["min_duration_sec"]):
+        reasons.append("window_too_short")
+    quality_flags = []
+    if repeat is not None and repeat >= CONFIG["expression"]["high_repeat_ratio"]:
+        quality_flags.append("expression_high_repeat")
+    if unknown_labels:
+        quality_flags.append("expression_unknown_labels")
+    if inconsistent_count:
+        quality_flags.append("expression_inconsistent_records")
+    usable = not reasons
+    return {
+        "score": round3(score) if usable else None,
+        "mean_device_value": round3(mean_value),
+        "dominant_expression": dominant,
+        "distribution": distribution,
+        "raw_count": raw_count,
+        "valid_count": valid_count,
+        "valid_ratio": round3(valid_ratio),
+        "duration_sec": round3(duration),
+        "adjacent_repeat_ratio": round3(repeat),
+        "unknown_labels": sorted(unknown_labels),
+        "inconsistent_count": inconsistent_count,
+        "used_in_mood": usable,
+        "unavailable_reason": reasons[0] if reasons else None,
+        "unavailable_reasons": reasons,
+        "quality_flags": sorted(set(quality_flags)),
+    }
+
+
+def compose_mood(source_scores: Dict[str, Optional[float]], keys: Optional[Iterable[str]] = None) -> Optional[float]:
+    selected = set(keys if keys is not None else source_scores)
+    subjective = [source_scores.get(key) for key in ("vas_mood", "sam_valence", "sam_valence_0_10") if key in selected and source_scores.get(key) is not None]
+    subjective_score = sum(subjective) / len(subjective) if subjective else None
+    expression = source_scores.get("expression") if "expression" in selected else None
+    if subjective_score is not None and expression is not None:
+        config = CONFIG["expression"]
+        return subjective_score * config["subjective_weight"] + expression * config["expression_weight"]
+    return subjective_score if subjective_score is not None else expression
+
+
 def valid_range(value: Any, low: float, high: float) -> Optional[float]:
     number = finite(value)
     return number if number is not None and low <= number <= high else None
@@ -197,18 +428,20 @@ def state_measures(sample: Dict[str, Any]) -> Dict[str, Any]:
     arousal = valid_range(source.get("sam_arousal"), 1, 9)
     arousal_10 = valid_range(source.get("sam_arousal_0_10"), 0, 10)
     stai_score = None if stai is None else (80 - stai) / 60 * 100
-    mood_candidates = []
-    if vas is not None: mood_candidates.append(("vas_mood", vas * 10))
-    if sam is not None: mood_candidates.append(("sam_valence", (sam - 1) / 8 * 100))
-    if sam_10 is not None: mood_candidates.append(("sam_valence_0_10", sam_10 * 10))
-    mood_score = sum(value for _, value in mood_candidates) / len(mood_candidates) if mood_candidates else None
+    mood_source_scores = {
+        "vas_mood": None if vas is None else vas * 10,
+        "sam_valence": None if sam is None else (sam - 1) / 8 * 100,
+        "sam_valence_0_10": None if sam_10 is None else sam_10 * 10,
+    }
+    subjective_mood = compose_mood(mood_source_scores)
     invalid = []
     for name, raw, parsed in (("stai_s", stai_raw, stai), ("vas_mood", vas_raw, vas), ("sam_valence", sam_raw, sam), ("sam_valence_0_10", sam_10_raw, sam_10)):
         if raw is not None and parsed is None: invalid.append(name)
     return {
-        "scores": {"stai_s": round3(stai_score), "mood": round3(mood_score)},
+        "scores": {"stai_s": round3(stai_score), "subjective_mood": round3(subjective_mood)},
         "raw": {"stai_s": stai_raw, "vas_mood": vas_raw, "sam_valence": sam_raw, "sam_valence_0_10": sam_10_raw, "sam_arousal": arousal, "sam_arousal_0_10": arousal_10},
-        "mood_sources": [name for name, _ in mood_candidates], "invalid_fields": invalid,
+        "mood_source_scores": {key: round3(value) for key, value in mood_source_scores.items()},
+        "invalid_fields": invalid,
     }
 
 
@@ -241,8 +474,14 @@ def score_sample(sample: Dict[str, Any], stage: str) -> Dict[str, Any]:
     measures = state_measures(sample)
     physiology = physiology_score(sample.get("physiology") or {})
     hrv = hrv_score(sample.get("physiology") or {})
-    component_scores = {"stai_s": measures["scores"]["stai_s"], "mood": measures["scores"]["mood"], "physiology": physiology["score"], "hrv": hrv["score"]}
+    expression = expression_score(sample.get("physiology") or {}, enabled=not is_immersion(stage))
+    derived = derived_metrics(sample.get("physiology") or {}, hrv, expression)
+    mood_source_scores = {**measures["mood_source_scores"], "expression": expression["score"]}
+    mood = compose_mood(mood_source_scores)
+    mood_sources = [key for key, value in mood_source_scores.items() if value is not None]
+    component_scores = {"stai_s": measures["scores"]["stai_s"], "mood": round3(mood), "physiology": physiology["score"], "hrv": hrv["score"]}
     flags = physiology["risk_flags"] + hrv["risk_flags"]
+    flags.extend(expression["quality_flags"])
     if measures["invalid_fields"]: flags.append("invalid_input")
     if is_immersion(stage): flags.append("expression_unavailable_in_immersion")
     feedback = feedback_risk(sample)
@@ -253,9 +492,11 @@ def score_sample(sample: Dict[str, Any], stage: str) -> Dict[str, Any]:
     score = weighted_mean(component_scores, CONFIG["state_weights"])
     return {
         "stage": stage, "state_score": round3(score), "state_components": component_scores,
-        "raw_state_measures": measures["raw"], "mood_sources": measures["mood_sources"],
+        "raw_state_measures": measures["raw"], "subjective_mood_score": measures["scores"]["subjective_mood"],
+        "mood_source_scores": mood_source_scores, "mood_sources": mood_sources, "expression": expression,
         "sam_arousal": measures["raw"]["sam_arousal"], "sam_arousal_0_10": measures["raw"]["sam_arousal_0_10"],
         "baseline_context": baseline_context(sample), "physiology": physiology, "hrv": hrv,
+        "derived_metrics": derived,
         "immediate_feedback": feedback, "used_metrics": used, "missing_metrics": missing,
         "risk_flags": sorted(set(flags)), "data_quality": "invalid" if not used else "good" if len(used) >= 3 else "fair",
     }
@@ -271,18 +512,76 @@ def effect_label(change: Optional[float]) -> str:
     return "明显下降"
 
 
+def compare_derived_metrics(before: Dict[str, Any], after: Dict[str, Any]) -> Dict[str, Any]:
+    comparison: Dict[str, Any] = {}
+    metric_configs = {
+        "relaxation": CONFIG["derived_metrics"]["relaxation_weights"],
+        "attention": CONFIG["derived_metrics"]["attention_weights"],
+        "emotion_peace": CONFIG["derived_metrics"]["emotion_weights"],
+    }
+    for metric, weights in metric_configs.items():
+        before_metric = before.get(metric) or {}
+        after_metric = after.get(metric) or {}
+        before_components = before_metric.get("components") or {}
+        after_components = after_metric.get("components") or {}
+        common = [key for key in before_components if before_components.get(key) is not None and after_components.get(key) is not None]
+        before_common = weighted_mean(before_components, weights, common)
+        after_common = weighted_mean(after_components, weights, common)
+        change = None if before_common is None or after_common is None else after_common - before_common
+        percent = None if before_common is None or abs(before_common) < 1e-9 or change is None else change / abs(before_common) * 100.0
+        comparison[metric] = {
+            "before": round3(before_common),
+            "after": round3(after_common),
+            "change": round3(change),
+            "change_percent": round3(percent),
+            "common_metrics": common,
+            "comparable": change is not None,
+            "label": effect_label(change),
+        }
+    comprehensive_weights = CONFIG["derived_metrics"]["comprehensive_weights"]
+    comprehensive_before = {metric: comparison[metric]["before"] for metric in comprehensive_weights}
+    comprehensive_after = {metric: comparison[metric]["after"] for metric in comprehensive_weights}
+    comprehensive_common = [key for key in comprehensive_weights if comprehensive_before[key] is not None and comprehensive_after[key] is not None]
+    before_score = weighted_mean(comprehensive_before, comprehensive_weights, comprehensive_common)
+    after_score = weighted_mean(comprehensive_after, comprehensive_weights, comprehensive_common)
+    change = None if before_score is None or after_score is None else after_score - before_score
+    percent = None if before_score is None or abs(before_score) < 1e-9 or change is None else change / abs(before_score) * 100.0
+    comparison["comprehensive_relaxation"] = {
+        "before": round3(before_score),
+        "after": round3(after_score),
+        "change": round3(change),
+        "change_percent": round3(percent),
+        "common_metrics": comprehensive_common,
+        "comparable": change is not None,
+        "label": effect_label(change),
+    }
+    return comparison
+
+
 def compare(before: Dict[str, Any], after: Dict[str, Any]) -> Dict[str, Any]:
-    common = [key for key in CONFIG["state_weights"] if before["state_components"].get(key) is not None and after["state_components"].get(key) is not None]
-    before_common = weighted_mean(before["state_components"], CONFIG["state_weights"], common)
-    after_common = weighted_mean(after["state_components"], CONFIG["state_weights"], common)
+    before_components = dict(before["state_components"])
+    after_components = dict(after["state_components"])
+    before_sources = before.get("mood_source_scores") or {}
+    after_sources = after.get("mood_source_scores") or {}
+    common_mood_sources = [key for key in before_sources if before_sources.get(key) is not None and after_sources.get(key) is not None]
+    if before_sources or after_sources:
+        before_components["mood"] = round3(compose_mood(before_sources, common_mood_sources))
+        after_components["mood"] = round3(compose_mood(after_sources, common_mood_sources))
+    common = [key for key in CONFIG["state_weights"] if before_components.get(key) is not None and after_components.get(key) is not None]
+    before_common = weighted_mean(before_components, CONFIG["state_weights"], common)
+    after_common = weighted_mean(after_components, CONFIG["state_weights"], common)
     change = None if before_common is None or after_common is None else after_common - before_common
     flags = before["risk_flags"] + after["risk_flags"]
     if change is None: flags.append("data_insufficient_for_change")
+    derived_effect = compare_derived_metrics(before.get("derived_metrics") or {}, after.get("derived_metrics") or {})
     return {
         "change_score": round3(change), "state_change": round3(change), "before_common_score": round3(before_common),
         "after_common_score": round3(after_common), "common_metrics": common,
-        "metric_set_equal": before["used_metrics"] == after["used_metrics"], "phq9_change": None,
+        "common_mood_sources": common_mood_sources,
+        "before_common_mood": before_components.get("mood"), "after_common_mood": after_components.get("mood"),
+        "metric_set_equal": before["used_metrics"] == after["used_metrics"] and before.get("mood_sources", []) == after.get("mood_sources", []), "phq9_change": None,
         "label": effect_label(change), "comparable": change is not None, "risk_flags": sorted(set(flags)),
+        "derived_metrics": derived_effect,
     }
 
 
