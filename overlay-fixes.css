@@ -981,7 +981,7 @@ body.awaiting-narration .stai-navigation .primary:after{content:none!important}
 .emotion-composition .emotion-legend b{color:var(--emotion-color)}
 .emotion-arc{
   width:150px;
-  height:88px;
+  height:104px;
   margin:10px 0 2px;
   overflow:hidden;
 }
@@ -1028,7 +1028,7 @@ body.awaiting-narration .stai-navigation .primary:after{content:none!important}
   position:absolute;
   z-index:4;
   left:50%;
-  bottom:17px;
+  bottom:31px;
   width:4px;
   height:53px;
   background:linear-gradient(#fff0bc,#edbc5f 70%,#bd8740);
@@ -1041,7 +1041,7 @@ body.awaiting-narration .stai-navigation .primary:after{content:none!important}
   position:absolute;
   z-index:5;
   left:50%;
-  bottom:10px;
+  bottom:23px;
   width:16px;
   height:16px;
   border:3px solid #efc46d;
@@ -1050,11 +1050,12 @@ body.awaiting-narration .stai-navigation .primary:after{content:none!important}
   box-shadow:0 0 9px #efc46d88;
   transform:translateX(-50%);
 }
-.emotion-arc b{bottom:-1px;font-size:24px;line-height:1;text-shadow:0 1px 8px #071521}
+.emotion-arc b{top:80px;bottom:auto;font-size:20px;line-height:1;text-shadow:0 1px 8px #071521}
+.emotion>.calm-gauge{display:none}
 @media(min-width:1101px) and (max-width:1550px){
   .emotion-shift{display:flex}
   .emotion-dashboard{gap:5px}
-  .emotion-arc{width:150px;height:75px;margin:2px 0 0;transform:scale(.88);transform-origin:center}
-  .emotion-poles{margin-top:-8px}
+  .emotion-arc{width:150px;height:104px;margin:0}
+  .emotion-poles{margin-top:-2px}
   .emotion-shift>strong{margin-top:3px}
 }

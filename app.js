@@ -7,7 +7,7 @@ import {assessmentAdapter,safetyCheck,recommendationEngine,overrideRecommendatio
 import {getDemoRecommendation} from './recommendation-service.js?v=20260916-1';
 import {STAI_ITEMS,STAI_OPTIONS,scoreStai,staiBand,staiChangeText} from './stai.js?v=20260922-1';
 import {compareAssessments} from './scoring-engine.js?v=20260924-1';
-document.head?.insertAdjacentHTML?.('beforeend','<link rel="stylesheet" href="refinement.css?v=20260914-1"><link rel="stylesheet" href="overlay-fixes.css?v=20260923-5">');
+document.head?.insertAdjacentHTML?.('beforeend','<link rel="stylesheet" href="refinement.css?v=20260914-1"><link rel="stylesheet" href="overlay-fixes.css?v=20260924-2">');
 const $=s=>document.querySelector(s),app=$('#app');
 const requestedSample=typeof location!=='undefined'?new URLSearchParams(location.search).get('sample'):null;
 const state={page:'home',companion:null,beforeAssessment:null,afterAssessment:null,goal:'relax',instrument:'chinese',tone:'jue',selectedPlan:null,recommendedPlan:null,recommendationSampleId:/^U00[1-9]$|^U010$/.test(requestedSample||'')?requestedSample:'U002',overrideReason:'',duration:120,soundscape:'rain',immersion:{phase:'C',progress:0},stai:{before:Array(20).fill(null),after:Array(20).fill(null),page:{before:0,after:0}}};
