@@ -14,3 +14,9 @@ __pycache__/
 # Source assessment reports are local reference material. Some individual PDFs
 # exceed GitHub's 100 MB limit and are not required by the static website.
 推荐算法+评分/评估报告数据/
+.workbuddy/
+assets/music/音乐.zip
+assets/music/音乐/
+assets/video/[0-9].mp4
+assets/video/10.mp4
+assets/video/火*_HSBSLR.mp4

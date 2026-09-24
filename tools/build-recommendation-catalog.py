@@ -1,13 +1,12 @@
 import json
-import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "推荐算法+评分"
 RECOMMENDATION = SOURCE / "recommendation_v2"
 SCORING = SOURCE / "scoring_v2"
-LIBRARY = SOURCE / "星璇律动VR -- 视频素材库" / "自然风景"
 VIDEO_OUT = ROOT / "assets" / "video" / "library"
+LIBRARY = VIDEO_OUT
 DATA_OUT = ROOT / "assets" / "data"
 
 def read_json(path):
@@ -30,7 +29,6 @@ def main():
         source_file = LIBRARY / item["file_name"]
         if not source_file.exists():
             raise FileNotFoundError(source_file)
-        shutil.copy2(source_file, VIDEO_OUT / item["file_name"])
         videos.append({
             "videoId": item["video_id"],
             "fileName": item["file_name"],

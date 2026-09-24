@@ -18,11 +18,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Assemble static site
         run: |
-          mkdir -p _site/assets/avatar _site/assets/images _site/assets/voice
-          cp index.html *.css app.js assessment.js assessment-service.js experience.js report-panels.js narration.js lipsync.js .nojekyll _site/
-          cp assets/avatar/xingxuan-readable.png assets/avatar/foreground-mask.png assets/avatar/speaking.png _site/assets/avatar/
-          cp assets/images/*.png assets/images/logo.jpg _site/assets/images/
-          cp assets/voice/*.wav assets/voice/envelopes.json _site/assets/voice/
+          mkdir -p _site
+          cp index.html *.css *.js .nojekyll _site/
+          cp -R assets _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
