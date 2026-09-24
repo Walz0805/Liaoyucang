@@ -731,6 +731,7 @@ body.tech .page.report .report-analysis{padding:18px 20px!important;overflow:aut
  body.tech .page.report .report-analysis>#companion{height:130px!important}
  body.tech .page.report .report-analysis>#companion .avatar-stage{flex-basis:100px!important;height:100px!important}
 }
+
 /* Soundscape selection and narration gate */
 body.awaiting-narration .primary{opacity:.38!important;cursor:not-allowed!important;filter:saturate(.35)}
 body.awaiting-narration .primary:after{content:' · 请听完讲解';font-size:9px}
@@ -948,3 +949,112 @@ body.tech .page.report-v6 .analyst-card-v6>#companion .avatar-canvas{object-posi
 /* STAI navigation stays interactive while its optional guide narration is playing. */
 body.awaiting-narration .stai-navigation .primary:not(:disabled){opacity:1!important;cursor:pointer!important;filter:none!important}
 body.awaiting-narration .stai-navigation .primary:after{content:none!important}
+
+/* Emotion report: seven-category color mapping and a legible pointer gauge. */
+.emotion-composition .emotion-donut{
+  position:relative;
+  box-shadow:0 0 0 1px #ffffff12,0 0 22px #65a8b526;
+  transform:rotate(-90deg);
+}
+.emotion-composition .emotion-donut:after{
+  content:'';
+  position:absolute;
+  inset:22%;
+  border-radius:50%;
+  box-shadow:inset 0 0 12px #0008;
+}
+.emotion-composition .emotion-legend span{
+  position:relative;
+  padding-left:13px;
+  align-items:center;
+}
+.emotion-composition .emotion-legend span:before{
+  content:'';
+  position:absolute;
+  left:0;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--emotion-color);
+  box-shadow:0 0 7px color-mix(in srgb,var(--emotion-color) 65%,transparent);
+}
+.emotion-composition .emotion-legend b{color:var(--emotion-color)}
+.emotion-arc{
+  width:150px;
+  height:88px;
+  margin:10px 0 2px;
+  overflow:hidden;
+}
+.emotion-arc:before{
+  left:7px;
+  top:5px;
+  width:136px;
+  height:136px;
+  background:conic-gradient(from 270deg,#617fa7 0 30%,#71a6a6 30% 65%,#f0c56c 65% 90%,#dca95f 90% 100%);
+  -webkit-mask:radial-gradient(circle,#0000 0 55%,#000 56% 68%,#0000 69%);
+  mask:radial-gradient(circle,#0000 0 55%,#000 56% 68%,#0000 69%);
+  filter:drop-shadow(0 0 8px #eabf6540);
+  clip-path:inset(0 0 50% 0);
+}
+.emotion-arc:after{
+  left:20px;
+  top:70px;
+  width:110px;
+  height:1px;
+  border-radius:0;
+  background:linear-gradient(90deg,transparent,#71889288 15%,#71889288 85%,transparent);
+}
+.emotion-arc .gauge-tick{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  bottom:17px;
+  width:1px;
+  height:61px;
+  transform-origin:50% 100%;
+  transform:translateX(-50%) rotate(calc(-90deg + var(--tick)*18deg));
+}
+.emotion-arc .gauge-tick:before{
+  content:'';
+  position:absolute;
+  left:-1px;
+  top:0;
+  width:3px;
+  height:7px;
+  border-radius:2px;
+  background:#d8e1dfb8;
+}
+.emotion-arc .gauge-needle{
+  position:absolute;
+  z-index:4;
+  left:50%;
+  bottom:17px;
+  width:4px;
+  height:53px;
+  background:linear-gradient(#fff0bc,#edbc5f 70%,#bd8740);
+  clip-path:polygon(50% 0,100% 88%,50% 100%,0 88%);
+  transform-origin:50% 100%;
+  transform:translateX(-50%) rotate(calc(-90deg + var(--calm)*1.8deg));
+  filter:drop-shadow(0 0 4px #efc56b);
+}
+.emotion-arc .gauge-hub{
+  position:absolute;
+  z-index:5;
+  left:50%;
+  bottom:10px;
+  width:16px;
+  height:16px;
+  border:3px solid #efc46d;
+  border-radius:50%;
+  background:radial-gradient(circle at 38% 35%,#fff2bd,#b77c35 34%,#162b3e 38%);
+  box-shadow:0 0 9px #efc46d88;
+  transform:translateX(-50%);
+}
+.emotion-arc b{bottom:18px;font-size:24px;text-shadow:0 1px 8px #071521}
+@media(min-width:1101px) and (max-width:1550px){
+  .emotion-shift{display:flex}
+  .emotion-dashboard{gap:5px}
+  .emotion-arc{width:150px;height:75px;margin:2px 0 0;transform:scale(.88);transform-origin:center}
+  .emotion-poles{margin-top:-8px}
+  .emotion-shift>strong{margin-top:3px}
+}
